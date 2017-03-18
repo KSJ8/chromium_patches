@@ -1,4 +1,4 @@
-From aacf4ba138e99e2f8763bdffcdb9447a8334e6b5 Mon Sep 17 00:00:00 2001
+From 904e5cea0b4459a394b5d3d2d128dc6548d57a93 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
 Subject: [PATCH 09/17] disable first run welcome page
@@ -8,10 +8,10 @@ Subject: [PATCH 09/17] disable first run welcome page
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index ce91e5ebb242..67085ab02a7a 100644
+index 3d91766c0d10..06bcfee301c1 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-@@ -93,7 +93,7 @@ public class FirstRunActivity extends AppCompatActivity implements FirstRunPageD
+@@ -95,7 +95,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
      @VisibleForTesting
      static FirstRunGlue sGlue = new FirstRunGlueImpl();
  
@@ -20,15 +20,15 @@ index ce91e5ebb242..67085ab02a7a 100644
  
      private String mResultSignInAccountName;
      private boolean mResultShowSignInSettings;
-@@ -177,7 +177,7 @@ public class FirstRunActivity extends AppCompatActivity implements FirstRunPageD
+@@ -212,7 +212,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
                  }
  
                  mFreProperties = freProperties;
 -                mShowWelcomePage = mFreProperties.getBoolean(SHOW_WELCOME_PAGE);
 +                //mShowWelcomePage = mFreProperties.getBoolean(SHOW_WELCOME_PAGE);
- 
-                 createPageSequence();
- 
+                 if (TextUtils.isEmpty(mResultSignInAccountName)) {
+                     mResultSignInAccountName = mFreProperties.getString(
+                             AccountFirstRunFragment.FORCE_SIGNIN_ACCOUNT_TO);
 -- 
-2.11.1
+2.12.0
 

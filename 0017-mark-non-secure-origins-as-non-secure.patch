@@ -1,4 +1,4 @@
-From 5410693acf2489bd79abbd0b9b899c53afce3633 Mon Sep 17 00:00:00 2001
+From 895145b542a512094645a4b4247564ca9192310a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 7 Feb 2017 21:58:02 -0500
 Subject: [PATCH 17/17] mark non-secure origins as non-secure
@@ -8,10 +8,10 @@ Subject: [PATCH 17/17] mark non-secure origins as non-secure
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index 42f2a5772320..4d76be8b2de2 100644
+index b818c8aee801..eed8e1a12aed 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -77,8 +77,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
+@@ -75,8 +75,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
              group, displayed_sensitive_input_on_http, &level, &status)) {
        // If neither the command-line switch nor field trial group is set, then
        // nonsecure defaults to neutral.
@@ -23,5 +23,5 @@ index 42f2a5772320..4d76be8b2de2 100644
    }
  
 -- 
-2.11.1
+2.12.0
 

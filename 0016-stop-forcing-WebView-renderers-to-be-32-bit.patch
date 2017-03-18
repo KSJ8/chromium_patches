@@ -1,4 +1,4 @@
-From 970929261504e9474b14933f9ffd134b5955ee96 Mon Sep 17 00:00:00 2001
+From 2bdaac4f9ce3dba774ed7407b3a32aed5646f56e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
 Subject: [PATCH 16/17] stop forcing WebView renderers to be 32-bit
@@ -8,10 +8,10 @@ Subject: [PATCH 16/17] stop forcing WebView renderers to be 32-bit
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/android_webview/apk/java/AndroidManifest.xml b/android_webview/apk/java/AndroidManifest.xml
-index fed3b31b3811..1a357f6312f1 100644
+index 0e0ac96a6ba9..c269e6ad8507 100644
 --- a/android_webview/apk/java/AndroidManifest.xml
 +++ b/android_webview/apk/java/AndroidManifest.xml
-@@ -17,8 +17,7 @@
+@@ -19,8 +19,7 @@
  
      <application android:label="Android System WebView"
          android:icon="@drawable/icon_webview"
@@ -22,5 +22,5 @@ index fed3b31b3811..1a357f6312f1 100644
          {% macro common(manifest_package, webview_lib) %}
              <activity android:name="com.android.webview.chromium.LicenseActivity"
 -- 
-2.11.1
+2.12.0
 
