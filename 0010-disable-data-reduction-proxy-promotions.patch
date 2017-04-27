@@ -1,0 +1,37 @@
+From 967e2c6c9ee12c976ed57767ddfc55392d67797a Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Thu, 24 Nov 2016 14:52:59 -0500
+Subject: [PATCH 10/16] disable data reduction proxy promotions
+
+---
+ testing/variations/fieldtrial_testing_config.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
+index 74e9b53b74a3..9cd8087ce5ed 100644
+--- a/testing/variations/fieldtrial_testing_config.json
++++ b/testing/variations/fieldtrial_testing_config.json
+@@ -465,7 +465,7 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Enabled"
++                    "name": "Disabled"
+                 }
+             ]
+         }
+@@ -477,9 +477,9 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Enabled_Warmup",
++                    "name": "Disabled",
+                     "params": {
+-                        "enable_warmup": "true"
++                        "enable_warmup": "false"
+                     }
+                 }
+             ]
+-- 
+2.12.2
+

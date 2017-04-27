@@ -1,7 +1,7 @@
-From cbbfa8f2e9b3c9b2bb842cbbf3c206e6c5871c54 Mon Sep 17 00:00:00 2001
+From 7b7d23aea9180b310d7f0877868e60051acfa6db Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
-Subject: [PATCH 12/17] add DuckDuckGo as the default search engine
+Subject: [PATCH 11/16] add DuckDuckGo as the default search engine
 
 ---
  .../search_engines/prepopulated_engines.json       |  12 +-
@@ -52,7 +52,7 @@ index f61971487da9..4e8ba585e80a 100644
  };
  
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 40604f5f8a45..597db401709e 100644
+index a7c7e1e351e3..489b50ab78d8 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
 @@ -50,441 +50,441 @@ namespace {
@@ -607,5 +607,5 @@ index 40604f5f8a45..597db401709e 100644
    &vinden,       &virgilio,     &yahoo,        &yahoo_ar,     &yahoo_at,
    &yahoo_au,     &yahoo_br,     &yahoo_ca,     &yahoo_ch,     &yahoo_cl,
 -- 
-2.12.0
+2.12.2
 

@@ -1,7 +1,7 @@
-From 637d1613aa587b85a54ee82c5218403975c5f694 Mon Sep 17 00:00:00 2001
+From 31d66e5d703908d0d67c55a813ce81b308d8d530 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
-Subject: [PATCH 07/17] disable metrics by default
+Subject: [PATCH 07/16] disable metrics by default
 
 ---
  .../java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java | 2 +-
@@ -21,5 +21,5 @@ index faf8149acfa1..3d91766c0d10 100644
      // UMA constants.
      private static final int SIGNIN_SETTINGS_DEFAULT_ACCOUNT = 0;
 -- 
-2.12.0
+2.12.2
 

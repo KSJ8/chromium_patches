@@ -1,17 +1,17 @@
-From d708f8e5fc7a22f39e96c1f79b5e93a0f0589624 Mon Sep 17 00:00:00 2001
+From 018fd342e0270568b2d1b287c6e09acc351d4084 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 6 Jan 2017 23:20:08 -0500
-Subject: [PATCH 15/17] disable autofill by default
+Subject: [PATCH 14/16] disable autofill by default
 
 ---
  components/autofill/core/browser/autofill_manager.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/autofill/core/browser/autofill_manager.cc b/components/autofill/core/browser/autofill_manager.cc
-index 977e67ae8749..ca2fa402b14e 100644
+index 056793fe09bc..b12bb55c118d 100644
 --- a/components/autofill/core/browser/autofill_manager.cc
 +++ b/components/autofill/core/browser/autofill_manager.cc
-@@ -259,7 +259,7 @@ void AutofillManager::RegisterProfilePrefs(
+@@ -262,7 +262,7 @@ void AutofillManager::RegisterProfilePrefs(
        prefs::kAutofillCreditCardSigninPromoImpressionCount, 0);
    registry->RegisterBooleanPref(
        prefs::kAutofillEnabled,
@@ -21,5 +21,5 @@ index 977e67ae8749..ca2fa402b14e 100644
    registry->RegisterBooleanPref(
        prefs::kAutofillProfileUseDatesFixed, false,
 -- 
-2.12.0
+2.12.2
 

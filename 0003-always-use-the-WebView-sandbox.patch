@@ -1,19 +1,19 @@
-From 934c26ce6f6b17256d2137400d437c8a4ad692d8 Mon Sep 17 00:00:00 2001
+From 44d15efba03a6b00ae4bc2f6f50d21202d68d2af Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
-Subject: [PATCH 03/17] always use the WebView sandbox
+Subject: [PATCH 03/16] always use the WebView sandbox
 
 ---
  .../webview/chromium/WebViewChromiumFactoryProvider.java | 16 ++--------------
  1 file changed, 2 insertions(+), 14 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index 65ca15c02239..3c9fae1f2f5f 100644
+index 9d74b066b2f5..c5256d5947f6 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -233,20 +233,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
-             CommandLine.init(null);
-         }
+@@ -223,20 +223,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+ 
+         CommandLineUtil.initCommandLine();
  
 -        boolean multiProcess = false;
 -        if (BuildInfo.isAtLeastO()) {
@@ -35,5 +35,5 @@ index 65ca15c02239..3c9fae1f2f5f 100644
          ThreadUtils.setWillOverrideUiThread();
          // Load chromium library.
 -- 
-2.12.0
+2.12.2
 
