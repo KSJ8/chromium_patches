@@ -1,4 +1,4 @@
-From 3c3a382d93c9d07cc32d3b6824b78e16e3ca9aec Mon Sep 17 00:00:00 2001
+From f9186e8822f8113d9b3e1be352196f5521aa48bf Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 7 Feb 2017 21:58:02 -0500
 Subject: [PATCH 16/16] mark non-secure origins as non-secure
@@ -8,7 +8,7 @@ Subject: [PATCH 16/16] mark non-secure origins as non-secure
  1 file changed, 2 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index 00368ec74a86..f3d7a51cafb0 100644
+index 0843ff8e567f..f53430f248ce 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
 @@ -34,8 +34,6 @@ bool GetSecurityLevelAndHistogramValueForNonSecureFieldTrial(
@@ -21,5 +21,5 @@ index 00368ec74a86..f3d7a51cafb0 100644
    *histogram_status = NON_SECURE;
    return true;
 -- 
-2.12.2
+2.13.1
 

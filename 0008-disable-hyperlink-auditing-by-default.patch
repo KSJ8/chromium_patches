@@ -1,4 +1,4 @@
-From d989786e536be217350eacb2dd5c4f0421124a3b Mon Sep 17 00:00:00 2001
+From bf8630f6cfe79f6c921f14d021c939e72ce2f3b0 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
 Subject: [PATCH 08/16] disable hyperlink auditing by default
@@ -8,10 +8,10 @@ Subject: [PATCH 08/16] disable hyperlink auditing by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
-index 6685b82472ea..7baf78306cf5 100644
+index 260c28e23b05..437ec1dc2160 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
 +++ b/chrome/browser/chrome_content_browser_client.cc
-@@ -990,7 +990,7 @@ ChromeContentBrowserClient::~ChromeContentBrowserClient() {
+@@ -1005,7 +1005,7 @@ ChromeContentBrowserClient::~ChromeContentBrowserClient() {
  void ChromeContentBrowserClient::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterBooleanPref(prefs::kDisable3DAPIs, false);
@@ -21,5 +21,5 @@ index 6685b82472ea..7baf78306cf5 100644
  }
  
 -- 
-2.12.2
+2.13.1
 
