@@ -1,4 +1,4 @@
-From f67cf0794417e61c155f733bb57fa0e19ccbf0cb Mon Sep 17 00:00:00 2001
+From e31ec61ca9cba6b9d0913adb4aa648b6e90511e4 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 4 Dec 2016 22:30:01 -0500
 Subject: [PATCH 12/16] CopperheadOS uses the stable channel
@@ -21,5 +21,5 @@ index 11d64ed126ca..5e5918808863 100644
  
  }  // namespace chrome
 -- 
-2.13.1
+2.13.2
 

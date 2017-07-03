@@ -1,4 +1,4 @@
-From ea876ee8e8832dffd6a22dae60278e4a5b4f8618 Mon Sep 17 00:00:00 2001
+From 9c82f62cb46c5e745ae822fd7acdf7a85fe88a01 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 14:52:59 -0500
 Subject: [PATCH 10/16] disable data reduction proxy promotions
@@ -33,5 +33,5 @@ index d750e452c05b..4dc1df035757 100644
                  }
              ]
 -- 
-2.13.1
+2.13.2
 

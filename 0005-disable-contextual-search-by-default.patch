@@ -1,4 +1,4 @@
-From fa1de1f2de8dc6ff5d1de7c4f740fa950266d6e2 Mon Sep 17 00:00:00 2001
+From 8deb6864d850fd040973d272dbe6cffed6fe6e1c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
 Subject: [PATCH 05/16] disable contextual search by default
@@ -21,5 +21,5 @@ index 16fea3cb6e8b..27f1221ce3f6 100644
  #endif  // defined(OS_ANDROID)
    registry->RegisterBooleanPref(prefs::kSessionExitedCleanly, true);
 -- 
-2.13.1
+2.13.2
 

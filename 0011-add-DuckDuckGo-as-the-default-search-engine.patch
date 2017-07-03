@@ -1,4 +1,4 @@
-From 2f8bafa1782f91a36da43453bbdc2357b06d362a Mon Sep 17 00:00:00 2001
+From e54996f6f587e720aec62040fe9ebf2978ab02ce Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 11/16] add DuckDuckGo as the default search engine
@@ -598,5 +598,5 @@ index a7c7e1e351e3..489b50ab78d8 100644
    &vinden,       &virgilio,     &yahoo,        &yahoo_ar,     &yahoo_at,
    &yahoo_au,     &yahoo_br,     &yahoo_ca,     &yahoo_ch,     &yahoo_cl,
 -- 
-2.13.1
+2.13.2
 

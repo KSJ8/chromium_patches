@@ -1,4 +1,4 @@
-From c5baf2cdba72ab907b8573d75fd81c20b2bc7eb5 Mon Sep 17 00:00:00 2001
+From 408bf315b83047665f180fd3699648de10b44931 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
 Subject: [PATCH 02/16] remove mremap from the system call whitelist
@@ -8,10 +8,10 @@ Subject: [PATCH 02/16] remove mremap from the system call whitelist
  1 file changed, 1 deletion(-)
 
 diff --git a/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc b/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
-index 79116a0580bf..49aee9147a08 100644
+index aad26f63f79a..15d9ad26dedc 100644
 --- a/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
 +++ b/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
-@@ -91,7 +91,6 @@ ResultExpr SandboxBPFBasePolicyAndroid::EvaluateSyscall(int sysno) const {
+@@ -93,7 +93,6 @@ ResultExpr SandboxBPFBasePolicyAndroid::EvaluateSyscall(int sysno) const {
      // While mincore is on multiple arches, it is only used on Android by x86.
      case __NR_mincore:  // https://crbug.com/701137
  #endif
@@ -20,5 +20,5 @@ index 79116a0580bf..49aee9147a08 100644
      // Used on pre-N to initialize threads in ART.
      case __NR_modify_ldt:
 -- 
-2.13.1
+2.13.2
 

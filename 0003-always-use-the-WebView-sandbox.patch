@@ -1,4 +1,4 @@
-From 52400dc424bd341e8c8d96a03c9a42840f7dc440 Mon Sep 17 00:00:00 2001
+From 400cda4044fa7a2a4e088b6b694d1381f63bcf1e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
 Subject: [PATCH 03/16] always use the WebView sandbox
@@ -35,5 +35,5 @@ index 1a3e476f8377..cd65485ee424 100644
          ThreadUtils.setWillOverrideUiThread();
          // Load chromium library.
 -- 
-2.13.1
+2.13.2
 

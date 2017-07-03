@@ -1,4 +1,4 @@
-From 2c6ab208dc4db399371a10d82f90c367a76338cb Mon Sep 17 00:00:00 2001
+From 6cab86a52b7b007ae9de607e3154c8ec36353f01 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
 Subject: [PATCH 09/16] disable first run welcome page
@@ -30,5 +30,5 @@ index 8c840013f259..f4c2f2703c57 100644
                      mResultSignInAccountName = mFreProperties.getString(
                              AccountFirstRunFragment.FORCE_SIGNIN_ACCOUNT_TO);
 -- 
-2.13.1
+2.13.2
 

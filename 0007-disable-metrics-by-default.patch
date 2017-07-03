@@ -1,4 +1,4 @@
-From 56df60fde8306abae4d513eae81bd6db71f45505 Mon Sep 17 00:00:00 2001
+From 3485cb00f7c375101c8304b86145dd29a7075665 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
 Subject: [PATCH 07/16] disable metrics by default
@@ -21,5 +21,5 @@ index 069cd9aa3039..8c840013f259 100644
      // UMA constants.
      private static final int SIGNIN_SETTINGS_DEFAULT_ACCOUNT = 0;
 -- 
-2.13.1
+2.13.2
 

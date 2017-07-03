@@ -1,4 +1,4 @@
-From e6d9b999fa336dab8f831b5984c89fea1f5a3a2d Mon Sep 17 00:00:00 2001
+From 9f737d41c84d0ef0fccbdb9915a8eb104e1178ba Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
 Subject: [PATCH 15/16] stop forcing WebView renderers to be 32-bit
@@ -22,5 +22,5 @@ index 399e0a535e0d..31db47213eae 100644
          {% macro common(manifest_package, webview_lib) %}
              <meta-data android:name="com.android.webview.WebViewLibrary"
 -- 
-2.13.1
+2.13.2
 

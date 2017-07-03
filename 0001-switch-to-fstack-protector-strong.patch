@@ -1,4 +1,4 @@
-From 1b83de6ff305d7822e73f343b586bf4c32fe9b18 Mon Sep 17 00:00:00 2001
+From 0eaefab503ab514ad072584576bd9bd927939724 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 07:29:13 -0500
 Subject: [PATCH 01/16] switch to -fstack-protector-strong
@@ -21,5 +21,5 @@ index 3b77c055108b..3557627964e7 100644
      }
  
 -- 
-2.13.1
+2.13.2
 
