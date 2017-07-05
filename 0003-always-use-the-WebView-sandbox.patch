@@ -1,7 +1,7 @@
 From 400cda4044fa7a2a4e088b6b694d1381f63bcf1e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
-Subject: [PATCH 03/16] always use the WebView sandbox
+Subject: [PATCH 03/17] always use the WebView sandbox
 
 ---
  .../webview/chromium/WebViewChromiumFactoryProvider.java | 16 ++--------------

@@ -1,7 +1,7 @@
-From 9f737d41c84d0ef0fccbdb9915a8eb104e1178ba Mon Sep 17 00:00:00 2001
+From d224b8cee46389fa76f752279c6ef0e81367e873 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
-Subject: [PATCH 15/16] stop forcing WebView renderers to be 32-bit
+Subject: [PATCH 16/17] use 64-bit WebView processes
 
 ---
  android_webview/apk/java/AndroidManifest.xml | 3 +--

@@ -1,7 +1,7 @@
 From e54996f6f587e720aec62040fe9ebf2978ab02ce Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
-Subject: [PATCH 11/16] add DuckDuckGo as the default search engine
+Subject: [PATCH 11/17] add DuckDuckGo as the default search engine
 
 ---
  .../search_engines/prepopulated_engines.json       |  10 +
