@@ -1,7 +1,7 @@
-From d224b8cee46389fa76f752279c6ef0e81367e873 Mon Sep 17 00:00:00 2001
+From 875ddf781f0ec0e584e17fe34f49d5ce46a1d864 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
-Subject: [PATCH 16/17] use 64-bit WebView processes
+Subject: [PATCH 12/18] use 64-bit WebView processes
 
 ---
  android_webview/apk/java/AndroidManifest.xml | 3 +--
@@ -22,5 +22,5 @@ index 399e0a535e0d..31db47213eae 100644
          {% macro common(manifest_package, webview_lib) %}
              <meta-data android:name="com.android.webview.WebViewLibrary"
 -- 
-2.13.2
+2.13.3
 

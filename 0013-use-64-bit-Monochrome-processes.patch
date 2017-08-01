@@ -1,7 +1,7 @@
-From 584091743dca3accd923b98dc781722955bddbcf Mon Sep 17 00:00:00 2001
+From d88aa40b507d8969d257b8b9f9a41a3e06a557b7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
-Subject: [PATCH 17/17] use 64-bit Monochrome processes
+Subject: [PATCH 13/18] use 64-bit Monochrome processes
 
 ---
  android_webview/BUILD.gn                           |  2 ++
@@ -117,5 +117,5 @@ index dcbfa96764a1..8e6d7ccac9e2 100644
 -  "use32bitAbi=android:use32bitAbi=\"true\"",
  ]
 -- 
-2.13.2
+2.13.3
 

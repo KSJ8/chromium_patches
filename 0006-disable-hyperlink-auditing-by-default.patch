@@ -1,7 +1,7 @@
-From d106b4a27cb53628d00623fbbddf3a768e8a2c01 Mon Sep 17 00:00:00 2001
+From 9fa4b8d2f1dea2c829402ca5e3a9b960434f8a3a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
-Subject: [PATCH 08/17] disable hyperlink auditing by default
+Subject: [PATCH 06/18] disable hyperlink auditing by default
 
 ---
  chrome/browser/chrome_content_browser_client.cc | 2 +-
@@ -21,5 +21,5 @@ index 260c28e23b05..437ec1dc2160 100644
  }
  
 -- 
-2.13.2
+2.13.3
 

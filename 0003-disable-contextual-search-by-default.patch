@@ -1,7 +1,7 @@
-From 8deb6864d850fd040973d272dbe6cffed6fe6e1c Mon Sep 17 00:00:00 2001
+From 9b309134527b30abfbdc618645f181190d2fb7e3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
-Subject: [PATCH 05/17] disable contextual search by default
+Subject: [PATCH 03/18] disable contextual search by default
 
 ---
  chrome/browser/profiles/profile.cc | 2 +-
@@ -21,5 +21,5 @@ index 16fea3cb6e8b..27f1221ce3f6 100644
  #endif  // defined(OS_ANDROID)
    registry->RegisterBooleanPref(prefs::kSessionExitedCleanly, true);
 -- 
-2.13.2
+2.13.3
 
