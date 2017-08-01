@@ -1,4 +1,4 @@
-From 414e0106426d9d36764f9765f62d6d26c31764f3 Mon Sep 17 00:00:00 2001
+From ee68d51decf6e364b919f2eaaa5d53039743c488 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
 Subject: [PATCH 05/18] disable metrics by default
@@ -8,10 +8,10 @@ Subject: [PATCH 05/18] disable metrics by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index 069cd9aa3039..8c840013f259 100644
+index 2d5bd34f659c..8da09587e1f0 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-@@ -68,7 +68,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
+@@ -91,7 +91,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
      public static final String EXTRA_FIRST_RUN_ACTIVITY_RESULT = "Extra.FreActivityResult";
      public static final String EXTRA_FIRST_RUN_COMPLETE = "Extra.FreComplete";
  

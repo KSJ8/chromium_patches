@@ -1,4 +1,4 @@
-From cc2ec72bf7b6b01072d9cbbb6e4c744ad5c00d75 Mon Sep 17 00:00:00 2001
+From 18ec162e346781cd2d4a460688d7821ad483afbf Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
 Subject: [PATCH 08/18] disable first run welcome page
@@ -8,19 +8,19 @@ Subject: [PATCH 08/18] disable first run welcome page
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index 8c840013f259..f4c2f2703c57 100644
+index 8da09587e1f0..dfab03b62cfd 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-@@ -95,7 +95,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
-     @VisibleForTesting
-     static FirstRunGlue sGlue = new FirstRunGlueImpl();
+@@ -121,7 +121,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
+ 
+     private static FirstRunActivityObserver sObserver;
  
 -    private boolean mShowWelcomePage = true;
 +    private boolean mShowWelcomePage = false;
  
      private String mResultSignInAccountName;
-     private boolean mResultShowSignInSettings;
-@@ -212,7 +212,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
+     private boolean mResultIsDefaultAccount;
+@@ -252,7 +252,7 @@ public class FirstRunActivity extends AsyncInitializationActivity implements Fir
                  }
  
                  mFreProperties = freProperties;

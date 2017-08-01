@@ -1,26 +1,38 @@
-From 6d345367aa7cd0beb1f983632e211e4b7886a0ca Mon Sep 17 00:00:00 2001
+From 4af36e82916019740cb15ecc11ad9c3fb73aa0bf Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 14:52:59 -0500
 Subject: [PATCH 09/18] disable data reduction proxy promotions
 
 ---
- testing/variations/fieldtrial_testing_config.json | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ testing/variations/fieldtrial_testing_config.json | 18 +++---------------
+ 1 file changed, 3 insertions(+), 15 deletions(-)
 
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index d750e452c05b..4dc1df035757 100644
+index c6bf634c520c..ced10902aad6 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -478,7 +478,7 @@
+@@ -510,19 +510,7 @@
              ],
              "experiments": [
                  {
 -                    "name": "Enabled"
+-                },
+-                {
+-                    "name": "EnabledWithSnackbarPromo",
+-                    "params": {
+-                        "snackbar_promo_data_savings_in_megabytes": "1024;100"
+-                    }
+-                },
+-                {
+-                    "name": "SnackbarPromoOnly",
+-                    "params": {
+-                        "snackbar_promo_data_savings_in_megabytes": "1024;100"
+-                    }
 +                    "name": "Disabled"
                  }
              ]
          }
-@@ -490,9 +490,9 @@
+@@ -534,9 +522,9 @@
              ],
              "experiments": [
                  {

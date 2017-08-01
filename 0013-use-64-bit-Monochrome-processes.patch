@@ -1,4 +1,4 @@
-From d88aa40b507d8969d257b8b9f9a41a3e06a557b7 Mon Sep 17 00:00:00 2001
+From 34907e9a8b6166333c2a433e97d8efc158706b55 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
 Subject: [PATCH 13/18] use 64-bit Monochrome processes
@@ -12,10 +12,10 @@ Subject: [PATCH 13/18] use 64-bit Monochrome processes
  5 files changed, 9 insertions(+), 25 deletions(-)
 
 diff --git a/android_webview/BUILD.gn b/android_webview/BUILD.gn
-index 2cac47dd715f..8296ba2b9173 100644
+index 3f9ce2754e04..83ef415db3a3 100644
 --- a/android_webview/BUILD.gn
 +++ b/android_webview/BUILD.gn
-@@ -341,7 +341,9 @@ if (android_64bit_target_cpu) {
+@@ -406,7 +406,9 @@ if (android_64bit_target_cpu) {
        "//v8($android_secondary_abi_toolchain)",
      ]
    }
@@ -26,10 +26,10 @@ index 2cac47dd715f..8296ba2b9173 100644
      deps = [
        ":webview_entry_point",
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index e150d0f55b38..197c5dd3c72d 100644
+index 1b9fafbc7205..bc0d608709d5 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -654,13 +654,7 @@ shared_library("chrome") {
+@@ -681,13 +681,7 @@ shared_library("chrome") {
  if (current_toolchain == default_toolchain) {
    if (enable_resource_whitelist_generation) {
      generate_resource_whitelist("monochrome_resource_whitelist") {
@@ -44,7 +44,7 @@ index e150d0f55b38..197c5dd3c72d 100644
        deps = [
          ":monochrome($_fat_lib_toolchain)",
        ]
-@@ -704,14 +698,8 @@ if (current_toolchain == default_toolchain) {
+@@ -731,14 +725,8 @@ if (current_toolchain == default_toolchain) {
    }
  }  # current_toolchain == host_toolchain
  
@@ -60,7 +60,7 @@ index e150d0f55b38..197c5dd3c72d 100644
    shared_library("monochrome") {
      sources = [
        "../app/android/chrome_main_delegate_android_initializer.cc",
-@@ -736,10 +724,12 @@ if (!android_64bit_target_cpu ||
+@@ -763,10 +751,12 @@ if (!android_64bit_target_cpu ||
  
      public_configs = extra_chrome_shared_library_configs
    }

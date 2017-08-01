@@ -1,4 +1,4 @@
-From 0e4e124c61e172858ef17a14afa1a8ddcf6ed7f6 Mon Sep 17 00:00:00 2001
+From b2b39ee0f44972a2abc132b689171e03a70fb5fd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 6 Jan 2017 23:20:08 -0500
 Subject: [PATCH 07/18] disable autofill by default
@@ -8,10 +8,10 @@ Subject: [PATCH 07/18] disable autofill by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/autofill/core/browser/autofill_manager.cc b/components/autofill/core/browser/autofill_manager.cc
-index 933b7c5dd41a..9f978f25b462 100644
+index 524f5293bfba..e7f488896215 100644
 --- a/components/autofill/core/browser/autofill_manager.cc
 +++ b/components/autofill/core/browser/autofill_manager.cc
-@@ -272,7 +272,7 @@ void AutofillManager::RegisterProfilePrefs(
+@@ -278,7 +278,7 @@ void AutofillManager::RegisterProfilePrefs(
        prefs::kAutofillCreditCardSigninPromoImpressionCount, 0);
    registry->RegisterBooleanPref(
        prefs::kAutofillEnabled,

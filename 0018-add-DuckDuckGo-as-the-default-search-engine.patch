@@ -1,18 +1,27 @@
-From 29338d355a1a8893dd0d51ef16744ed5737c7b01 Mon Sep 17 00:00:00 2001
+From 6ca05d039b65d1c4aeee2ecddf80c0e52119ff65 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 18/18] add DuckDuckGo as the default search engine
 
 ---
- .../search_engines/prepopulated_engines.json       |  10 +
+ .../search_engines/prepopulated_engines.json       |  12 +-
  components/search_engines/search_engine_type.h     |   1 +
  .../template_url_prepopulate_data.cc               | 218 ++++++++++-----------
- 3 files changed, 120 insertions(+), 109 deletions(-)
+ 3 files changed, 121 insertions(+), 110 deletions(-)
 
 diff --git a/components/search_engines/prepopulated_engines.json b/components/search_engines/prepopulated_engines.json
-index 3ebf56b89188..dd3e63a3358f 100644
+index 58f4ae0dcc90..6e9bd368b4f3 100644
 --- a/components/search_engines/prepopulated_engines.json
 +++ b/components/search_engines/prepopulated_engines.json
+@@ -10,7 +10,7 @@
+ 
+ // The following unique IDs are available:
+ //    7, 11, 12, 13, 14, 18, 19, 20, 22, 24, 26, 28, 29, 30, 32, 33, 34, 39, 37,
+-//    38, 40, 41, 42, 46, 47, 48, 49, 51, 52, 58, 59, 69, 71, 72, 82, 84, 86,
++//    38, 40, 41, 42, 47, 48, 49, 51, 52, 58, 59, 69, 71, 72, 82, 84, 86,
+ //    89, 91+
+ //
+ // IDs > 1000 are reserved for distribution custom engines.
 @@ -108,6 +108,16 @@
        "id": 68
      },
@@ -31,10 +40,10 @@ index 3ebf56b89188..dd3e63a3358f 100644
        "name": "Google",
        "keyword": "google.com",
 diff --git a/components/search_engines/search_engine_type.h b/components/search_engines/search_engine_type.h
-index f61971487da9..4e8ba585e80a 100644
+index c19dd0e91cf9..02f6b1612621 100644
 --- a/components/search_engines/search_engine_type.h
 +++ b/components/search_engines/search_engine_type.h
-@@ -60,6 +60,7 @@ enum SearchEngineType {
+@@ -63,6 +63,7 @@ enum SearchEngineType {
    SEARCH_ENGINE_YANDEX,
    SEARCH_ENGINE_ZOZNAM,
    SEARCH_ENGINE_360,
