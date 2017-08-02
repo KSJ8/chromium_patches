@@ -1,7 +1,7 @@
 From 0943872678fa77476364c0dde32022fecfac6a16 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
-Subject: [PATCH 17/18] enable -fwrapv in non-UBSan builds for clang
+Subject: [PATCH 17/19] enable -fwrapv in non-UBSan builds for clang
 
 ---
  build/config/compiler/BUILD.gn | 4 ++++
