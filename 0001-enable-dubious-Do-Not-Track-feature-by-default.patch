@@ -1,7 +1,7 @@
 From e901c933786aaab21d0baeb3b10ee89e2df78804 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 11:16:11 -0400
-Subject: [PATCH 01/19] enable dubious Do Not Track feature by default
+Subject: [PATCH 01/20] enable dubious Do Not Track feature by default
 
 ---
  chrome/browser/ui/browser_ui_prefs.cc | 2 +-
@@ -21,5 +21,5 @@ index f9fd319bbca5..c20154b37af9 100644
  #if BUILDFLAG(ENABLE_WEBRTC)
    // TODO(guoweis): Remove next 2 options at M50.
 -- 
-2.13.3
+2.13.4
 

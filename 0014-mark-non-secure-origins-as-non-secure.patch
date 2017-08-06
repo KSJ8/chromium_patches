@@ -1,7 +1,7 @@
 From 6e4aa5229cd2df2f6855b5c9c58c5eb55b2f9f1c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 7 Feb 2017 21:58:02 -0500
-Subject: [PATCH 14/19] mark non-secure origins as non-secure
+Subject: [PATCH 14/20] mark non-secure origins as non-secure
 
 ---
  components/security_state/core/security_state.cc | 2 --
@@ -21,5 +21,5 @@ index aed4e42d2bfd..00abfb1e10f1 100644
    *histogram_status = NON_SECURE;
    return true;
 -- 
-2.13.3
+2.13.4
 
