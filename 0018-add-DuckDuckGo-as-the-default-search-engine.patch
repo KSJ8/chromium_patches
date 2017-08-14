@@ -1,7 +1,7 @@
-From 6ca05d039b65d1c4aeee2ecddf80c0e52119ff65 Mon Sep 17 00:00:00 2001
+From 98eab5357ab74427650c70f516624193eb6f6f63 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
-Subject: [PATCH 18/20] add DuckDuckGo as the default search engine
+Subject: [PATCH 18/21] add DuckDuckGo as the default search engine
 
 ---
  .../search_engines/prepopulated_engines.json       |  12 +-
@@ -607,5 +607,5 @@ index a7c7e1e351e3..489b50ab78d8 100644
    &vinden,       &virgilio,     &yahoo,        &yahoo_ar,     &yahoo_at,
    &yahoo_au,     &yahoo_br,     &yahoo_ca,     &yahoo_ch,     &yahoo_cl,
 -- 
-2.13.4
+2.14.1
 

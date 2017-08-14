@@ -1,7 +1,7 @@
-From 18ec162e346781cd2d4a460688d7821ad483afbf Mon Sep 17 00:00:00 2001
+From c9d029d1212507f34001885228f4b7793fc7e49a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
-Subject: [PATCH 08/20] disable first run welcome page
+Subject: [PATCH 08/21] disable first run welcome page
 
 ---
  .../src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java    | 4 ++--
@@ -30,5 +30,5 @@ index 8da09587e1f0..dfab03b62cfd 100644
                      mResultSignInAccountName = mFreProperties.getString(
                              AccountFirstRunFragment.FORCE_SIGNIN_ACCOUNT_TO);
 -- 
-2.13.4
+2.14.1
 
