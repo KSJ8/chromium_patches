@@ -1,4 +1,4 @@
-From 8308fa2ea104d37a60e4db2b6a9bf024a77af6c3 Mon Sep 17 00:00:00 2001
+From e0886d729c19eff4947cd85cec3407e5120272fe Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 6 Jan 2017 23:20:08 -0500
 Subject: [PATCH 07/21] disable autofill by default
@@ -8,7 +8,7 @@ Subject: [PATCH 07/21] disable autofill by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/autofill/core/browser/autofill_manager.cc b/components/autofill/core/browser/autofill_manager.cc
-index ceed0aca37bd..eb08e42e9829 100644
+index 1c46141d75f4..b582fff448b2 100644
 --- a/components/autofill/core/browser/autofill_manager.cc
 +++ b/components/autofill/core/browser/autofill_manager.cc
 @@ -278,7 +278,7 @@ void AutofillManager::RegisterProfilePrefs(

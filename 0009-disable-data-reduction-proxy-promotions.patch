@@ -1,17 +1,17 @@
-From 5eeddb8285ae3139cde3ca091fcf31fb50b70d97 Mon Sep 17 00:00:00 2001
+From bdc651abcb788ff977fe2c58c0fef4292e2d77ee Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
-Date: Thu, 24 Nov 2016 14:52:59 -0500
+Date: Wed, 6 Sep 2017 14:53:07 -0400
 Subject: [PATCH 09/21] disable data reduction proxy promotions
 
 ---
- testing/variations/fieldtrial_testing_config.json | 18 +++---------------
- 1 file changed, 3 insertions(+), 15 deletions(-)
+ testing/variations/fieldtrial_testing_config.json | 21 +++------------------
+ 1 file changed, 3 insertions(+), 18 deletions(-)
 
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index c6bf634c520c..ced10902aad6 100644
+index a2f68f3f44d8..ffd3ab1289a0 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -510,19 +510,7 @@
+@@ -584,19 +584,7 @@
              ],
              "experiments": [
                  {
@@ -32,18 +32,27 @@ index c6bf634c520c..ced10902aad6 100644
                  }
              ]
          }
-@@ -534,9 +522,9 @@
+@@ -608,7 +596,7 @@
              ],
              "experiments": [
                  {
--                    "name": "Enabled_Warmup",
-+                    "name": "Disabled",
-                     "params": {
--                        "enable_warmup": "true"
-+                        "enable_warmup": "false"
-                     }
+-                    "name": "Enabled"
++                    "name": "Disabled"
                  }
              ]
+         }
+@@ -620,10 +608,7 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Enabled",
+-                    "enable_features": [
+-                        "DataReductionProxyLowMemoryDevicePromo"
+-                    ]
++                    "name": "Disabled"
+                 }
+             ]
+         }
 -- 
 2.14.1
 

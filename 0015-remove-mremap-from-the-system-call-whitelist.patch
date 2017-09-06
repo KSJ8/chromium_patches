@@ -1,20 +1,46 @@
-From 741ea8c81e18cf6018e1495bb12ed2342035d0b8 Mon Sep 17 00:00:00 2001
+From a156373fc0454779573eb889675e86ec27e7682d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
 Subject: [PATCH 15/21] remove mremap from the system call whitelist
 
 ---
- content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc | 1 -
- 1 file changed, 1 deletion(-)
+ content/common/sandbox_linux/bpf_renderer_policy_linux.cc    | 1 -
+ content/common/sandbox_linux/bpf_utility_policy_linux.cc     | 1 -
+ sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc | 1 -
+ 3 files changed, 3 deletions(-)
 
-diff --git a/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc b/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
-index aad26f63f79a..15d9ad26dedc 100644
---- a/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
-+++ b/content/common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc
-@@ -93,7 +93,6 @@ ResultExpr SandboxBPFBasePolicyAndroid::EvaluateSyscall(int sysno) const {
-     // While mincore is on multiple arches, it is only used on Android by x86.
-     case __NR_mincore:  // https://crbug.com/701137
+diff --git a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
+index da189088caae..966a2faf945b 100644
+--- a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
++++ b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
+@@ -74,7 +74,6 @@ ResultExpr RendererProcessPolicy::EvaluateSyscall(int sysno) const {
+     case __NR_ugetrlimit:
  #endif
+     case __NR_mincore:  // See crbug.com/741984.
+-    case __NR_mremap:  // See crbug.com/149834.
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sched_get_priority_max:
+diff --git a/content/common/sandbox_linux/bpf_utility_policy_linux.cc b/content/common/sandbox_linux/bpf_utility_policy_linux.cc
+index 13367964e64e..6486b080d4e6 100644
+--- a/content/common/sandbox_linux/bpf_utility_policy_linux.cc
++++ b/content/common/sandbox_linux/bpf_utility_policy_linux.cc
+@@ -39,7 +39,6 @@ ResultExpr UtilityProcessPolicy::EvaluateSyscall(int sysno) const {
+ #if defined(__i386__) || defined(__arm__)
+     case __NR_ugetrlimit:
+ #endif
+-    case __NR_mremap:  // https://crbug.com/546204
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sysinfo:
+diff --git a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
+index cf2900a678c6..bd7271810854 100644
+--- a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
++++ b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
+@@ -93,7 +93,6 @@ ResultExpr BaselinePolicyAndroid::EvaluateSyscall(int sysno) const {
+     // policy is used directly by //content, and mincore needs to be allowed per
+     // https://crbug.com/741984.
+     case __NR_mincore:
 -    case __NR_mremap:
  #if defined(__i386__)
      // Used on pre-N to initialize threads in ART.

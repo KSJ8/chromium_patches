@@ -1,4 +1,4 @@
-From 55426cdc0b49fb96d3ae0bf2252e971c0c59c519 Mon Sep 17 00:00:00 2001
+From 1fb8c94dfdb3114c4235a238144cb375923cf338 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 19/21] stop enabling search engine geolocation by default
@@ -9,10 +9,10 @@ Subject: [PATCH 19/21] stop enabling search engine geolocation by default
  2 files changed, 12 insertions(+), 15 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-index df376b27c439..01dedd79ca30 100644
+index f76052cb2673..4fa6d9f8f172 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-@@ -209,7 +209,7 @@ public class Website implements Serializable {
+@@ -249,7 +249,7 @@ public class Website implements Serializable {
      public void setGeolocationPermission(ContentSetting value) {
          if (WebsitePreferenceBridge.shouldUseDSEGeolocationSetting(
                      mOrigin.getOrigin(), false)) {
@@ -22,10 +22,10 @@ index df376b27c439..01dedd79ca30 100644
              if (mGeolocationInfo != null) {
                  mGeolocationInfo.setContentSetting(value);
 diff --git a/chrome/browser/android/search_geolocation/search_geolocation_service.cc b/chrome/browser/android/search_geolocation/search_geolocation_service.cc
-index 2515690fa512..d3a6686b3fbf 100644
+index f4b46d321b21..b06ed649770a 100644
 --- a/chrome/browser/android/search_geolocation/search_geolocation_service.cc
 +++ b/chrome/browser/android/search_geolocation/search_geolocation_service.cc
-@@ -207,7 +207,14 @@ void SearchGeolocationService::SetDSEGeolocationSetting(bool setting) {
+@@ -208,7 +208,14 @@ void SearchGeolocationService::SetDSEGeolocationSetting(bool setting) {
    pref.setting = setting;
    SetDSEGeolocationPref(pref);
  
@@ -41,10 +41,10 @@ index 2515690fa512..d3a6686b3fbf 100644
  }
  
  void SearchGeolocationService::Shutdown() {
-@@ -221,11 +228,7 @@ void SearchGeolocationService::OnDSEChanged() {
-   PrefValue pref = GetDSEGeolocationPref();
-   ContentSetting content_setting = GetCurrentContentSetting();
- 
+@@ -225,11 +232,7 @@ void SearchGeolocationService::OnDSEChanged() {
+   // Remove any geolocation embargo on the URL.
+   PermissionDecisionAutoBlocker::GetForProfile(profile_)->RemoveEmbargoByUrl(
+       delegate_->GetDSEOrigin().GetURL(), CONTENT_SETTINGS_TYPE_GEOLOCATION);
 -  if (content_setting == CONTENT_SETTING_BLOCK && pref.setting) {
 -    pref.setting = false;
 -  } else if (content_setting == CONTENT_SETTING_ALLOW && !pref.setting) {
@@ -54,7 +54,7 @@ index 2515690fa512..d3a6686b3fbf 100644
  
    if (new_dse_name != pref.dse_name && pref.setting)
      SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -268,7 +271,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
+@@ -272,7 +275,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
  
      PrefValue pref;
      pref.dse_name = delegate_->GetDSEName();
@@ -63,7 +63,7 @@ index 2515690fa512..d3a6686b3fbf 100644
      SetDSEGeolocationPref(pref);
  
      SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -278,13 +281,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
+@@ -282,13 +285,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
  void SearchGeolocationService::EnsureDSEGeolocationSettingIsValid() {
    PrefValue pref = GetDSEGeolocationPref();
    ContentSetting content_setting = GetCurrentContentSetting();

@@ -1,4 +1,4 @@
-From 59d6dfed6eab97c3794990860bee4ad0d63483df Mon Sep 17 00:00:00 2001
+From 72d39a85b7a062e7435cdb547cc1195f3c0b994d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
 Subject: [PATCH 13/21] use 64-bit Monochrome processes
@@ -12,10 +12,10 @@ Subject: [PATCH 13/21] use 64-bit Monochrome processes
  5 files changed, 9 insertions(+), 25 deletions(-)
 
 diff --git a/android_webview/BUILD.gn b/android_webview/BUILD.gn
-index 3f9ce2754e04..83ef415db3a3 100644
+index 11e8f1fe7b4b..fee1a905b769 100644
 --- a/android_webview/BUILD.gn
 +++ b/android_webview/BUILD.gn
-@@ -406,7 +406,9 @@ if (android_64bit_target_cpu) {
+@@ -405,7 +405,9 @@ if (android_64bit_target_cpu) {
        "//v8($android_secondary_abi_toolchain)",
      ]
    }
@@ -26,11 +26,11 @@ index 3f9ce2754e04..83ef415db3a3 100644
      deps = [
        ":webview_entry_point",
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index 1b9fafbc7205..bc0d608709d5 100644
+index a99678113214..142a806234a8 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -681,13 +681,7 @@ shared_library("chrome") {
- if (current_toolchain == default_toolchain) {
+@@ -719,13 +719,7 @@ if (current_toolchain == default_toolchain) {
+ 
    if (enable_resource_whitelist_generation) {
      generate_resource_whitelist("monochrome_resource_whitelist") {
 -      # Always use the 32-bit library's whitelist since the 64-bit one is
@@ -44,7 +44,7 @@ index 1b9fafbc7205..bc0d608709d5 100644
        deps = [
          ":monochrome($_fat_lib_toolchain)",
        ]
-@@ -731,14 +725,8 @@ if (current_toolchain == default_toolchain) {
+@@ -839,14 +833,8 @@ if (current_toolchain == default_toolchain) {
    }
  }  # current_toolchain == host_toolchain
  
@@ -60,7 +60,7 @@ index 1b9fafbc7205..bc0d608709d5 100644
    shared_library("monochrome") {
      sources = [
        "../app/android/chrome_main_delegate_android_initializer.cc",
-@@ -763,10 +751,12 @@ if (!android_64bit_target_cpu ||
+@@ -871,10 +859,12 @@ if (!android_64bit_target_cpu ||
  
      public_configs = extra_chrome_shared_library_configs
    }
@@ -76,10 +76,10 @@ index 1b9fafbc7205..bc0d608709d5 100644
    }
  }
 diff --git a/chrome/android/chrome_public_apk_tmpl.gni b/chrome/android/chrome_public_apk_tmpl.gni
-index 6998087442f2..56f9579e22ee 100644
+index 695309b60601..16559d659647 100644
 --- a/chrome/android/chrome_public_apk_tmpl.gni
 +++ b/chrome/android/chrome_public_apk_tmpl.gni
-@@ -87,13 +87,7 @@ template("chrome_public_apk_tmpl") {
+@@ -97,13 +97,7 @@ template("chrome_public_apk_tmpl") {
  
  template("monochrome_public_apk_tmpl") {
    chrome_public_apk_tmpl(target_name) {

@@ -1,4 +1,4 @@
-From e4db6926bedd43f91296619c1b4615bae88b8904 Mon Sep 17 00:00:00 2001
+From f27ec8e16be241afa940519c7ecc58e650328d0a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 11:16:11 -0400
 Subject: [PATCH 01/21] enable dubious Do Not Track feature by default
@@ -8,7 +8,7 @@ Subject: [PATCH 01/21] enable dubious Do Not Track feature by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/ui/browser_ui_prefs.cc b/chrome/browser/ui/browser_ui_prefs.cc
-index f9fd319bbca5..c20154b37af9 100644
+index 978db3500449..3ed02ec2394d 100644
 --- a/chrome/browser/ui/browser_ui_prefs.cc
 +++ b/chrome/browser/ui/browser_ui_prefs.cc
 @@ -73,7 +73,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {
@@ -18,8 +18,8 @@ index f9fd319bbca5..c20154b37af9 100644
 -      false,
 +      true,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
- #if BUILDFLAG(ENABLE_WEBRTC)
-   // TODO(guoweis): Remove next 2 options at M50.
+ #if !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
+   registry->RegisterBooleanPref(prefs::kPrintPreviewUseSystemDefaultPrinter,
 -- 
 2.14.1
 

@@ -1,25 +1,25 @@
-From 37e365a4eaf06ef7fb38d540bd3191e2a28fdf7e Mon Sep 17 00:00:00 2001
+From 250c50c302c5f99f6e6c8b134875f57c2c9829df Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 4 Dec 2016 22:30:01 -0500
 Subject: [PATCH 10/21] CopperheadOS uses the stable channel
 
 ---
- chrome/common/channel_info_android.cc | 2 +-
+ components/version_info/channel_android.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/chrome/common/channel_info_android.cc b/chrome/common/channel_info_android.cc
-index 11d64ed126ca..5e5918808863 100644
---- a/chrome/common/channel_info_android.cc
-+++ b/chrome/common/channel_info_android.cc
-@@ -37,7 +37,7 @@ version_info::Channel GetChannel() {
-   if (!strcmp(bi->package_name(), "com.chrome.canary"))
-     return version_info::Channel::CANARY;
+diff --git a/components/version_info/channel_android.cc b/components/version_info/channel_android.cc
+index b63b5ac924cf..4380386532c9 100644
+--- a/components/version_info/channel_android.cc
++++ b/components/version_info/channel_android.cc
+@@ -19,7 +19,7 @@ Channel ChannelFromPackageName(const char* package_name) {
+   if (!strcmp(package_name, "com.chrome.canary"))
+     return Channel::CANARY;
  
--  return version_info::Channel::UNKNOWN;
-+  return version_info::Channel::STABLE;
+-  return Channel::UNKNOWN;
++  return Channel::STABLE;
  }
  
- }  // namespace chrome
+ }  // namespace version_info
 -- 
 2.14.1
 

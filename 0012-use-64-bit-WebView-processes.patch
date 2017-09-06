@@ -1,4 +1,4 @@
-From 26e2a7a3aaf453674029d5441e4fecb431fafd1e Mon Sep 17 00:00:00 2001
+From 467c5e6140260d40ce1cbcbc592b1813c72f3909 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
 Subject: [PATCH 12/21] use 64-bit WebView processes
@@ -8,7 +8,7 @@ Subject: [PATCH 12/21] use 64-bit WebView processes
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/android_webview/apk/java/AndroidManifest.xml b/android_webview/apk/java/AndroidManifest.xml
-index fd3ca2b36706..c84fd1faef4e 100644
+index 12758c02e965..8caa2f42bbf2 100644
 --- a/android_webview/apk/java/AndroidManifest.xml
 +++ b/android_webview/apk/java/AndroidManifest.xml
 @@ -20,8 +20,7 @@
