@@ -1,7 +1,7 @@
 From c07913e43e834867acba6b2707c56c50f2965876 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
-Subject: [PATCH 03/21] disable contextual search by default
+Subject: [PATCH 03/23] disable contextual search by default
 
 ---
  chrome/browser/profiles/profile.cc | 2 +-

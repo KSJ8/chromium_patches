@@ -1,7 +1,7 @@
 From a156373fc0454779573eb889675e86ec27e7682d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
-Subject: [PATCH 15/21] remove mremap from the system call whitelist
+Subject: [PATCH 15/23] remove mremap from the system call whitelist
 
 ---
  content/common/sandbox_linux/bpf_renderer_policy_linux.cc    | 1 -

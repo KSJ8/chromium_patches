@@ -1,0 +1,35 @@
+From 07a9a960dea2676a8248a735904793e6ab32ced4 Mon Sep 17 00:00:00 2001
+From: Paul Miller <paulmiller@google.com>
+Date: Wed, 30 Aug 2017 16:04:53 +0000
+Subject: [PATCH 23/23] WebView: Remove mechanism to omit downstream *ForO
+ classes
+
+This was added temporarily to avoid breaking the downstream build during
+the upstreaming process.
+
+BUG=756653
+
+Change-Id: Id6674cfce48cbaa3d53c291661adbe1513341839
+Reviewed-on: https://chromium-review.googlesource.com/641383
+Reviewed-by: Bo <boliu@chromium.org>
+Commit-Queue: Paul Miller <paulmiller@chromium.org>
+Cr-Commit-Position: refs/heads/master@{#498480}
+---
+ android_webview/glue/glue.gni | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/android_webview/glue/glue.gni b/android_webview/glue/glue.gni
+index 0a3ce579dbe0..cdc293d445e0 100644
+--- a/android_webview/glue/glue.gni
++++ b/android_webview/glue/glue.gni
+@@ -15,7 +15,3 @@ glue_library_deps = [
+   "//net/android:net_java",
+   "//ui/android:ui_java",
+ ]
+-
+-# Omit downstream *ForO classes.
+-# TODO(paulmiller): Remove this after removing those downstream classes.
+-unpublished_apis_upstream = true
+-- 
+2.14.1
+
