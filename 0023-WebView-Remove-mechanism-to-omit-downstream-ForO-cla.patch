@@ -1,7 +1,7 @@
 From 07a9a960dea2676a8248a735904793e6ab32ced4 Mon Sep 17 00:00:00 2001
 From: Paul Miller <paulmiller@google.com>
 Date: Wed, 30 Aug 2017 16:04:53 +0000
-Subject: [PATCH 23/23] WebView: Remove mechanism to omit downstream *ForO
+Subject: [PATCH 23/24] WebView: Remove mechanism to omit downstream *ForO
  classes
 
 This was added temporarily to avoid breaking the downstream build during
