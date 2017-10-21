@@ -1,17 +1,17 @@
-From 59ebe7992d5ad191123087cfa1748bf1aabda0be Mon Sep 17 00:00:00 2001
+From 2581d7e2ff06247deb4497a579cab586588828d5 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 07:29:13 -0500
-Subject: [PATCH 16/24] switch to -fstack-protector-strong
+Subject: [PATCH 16/21] switch to -fstack-protector-strong
 
 ---
  build/config/compiler/BUILD.gn | 6 +-----
  1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index b5d6d8fdb443..d3acdabc3b4a 100644
+index 0acb460fe62d..d127ac912796 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -206,16 +206,12 @@ config("compiler") {
+@@ -215,16 +215,12 @@ config("compiler") {
          cflags += [ "-fstack-protector" ]
        }
      } else if (is_posix && !is_chromeos && !is_nacl) {
@@ -30,5 +30,5 @@ index b5d6d8fdb443..d3acdabc3b4a 100644
      }
  
 -- 
-2.14.1
+2.14.2
 

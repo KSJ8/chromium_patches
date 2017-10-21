@@ -1,27 +1,29 @@
-From 1662cfac23eb01561cc0f677fdb57bf74b401b40 Mon Sep 17 00:00:00 2001
+From a5c90271634491ff375ab8cd6841630974a3bc58 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
-Date: Tue, 7 Feb 2017 21:58:02 -0500
-Subject: [PATCH 14/24] mark non-secure origins as non-secure
+Date: Fri, 20 Oct 2017 21:20:50 -0400
+Subject: [PATCH 14/21] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ components/security_state/core/security_state.cc | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index c7d40bf2b110..ae4f983a429c 100644
+index 2dcd0d36d8c5..406352171d7b 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -86,9 +86,7 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
-             group, displayed_sensitive_input_on_http, is_incognito, &level,
-             &status)) {
-       status = HTTP_SHOW_WARNING_ON_SENSITIVE_FIELDS;
+@@ -97,10 +97,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
+     if (!GetSecurityLevelAndHistogramValueForNonSecureFieldTrial(
+             group, displayed_sensitive_input_on_http, is_incognito,
+             input_events, &level, mark_http_as)) {
+-      *mark_http_as = HTTP_SHOW_WARNING_ON_SENSITIVE_FIELDS;
 -      level = displayed_sensitive_input_on_http
 -                  ? security_state::HTTP_SHOW_WARNING
 -                  : NONE;
++      *mark_http_as = NON_SECURE;
 +      level = DANGEROUS;
      }
    }
  
 -- 
-2.14.1
+2.14.2
 
