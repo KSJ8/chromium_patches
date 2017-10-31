@@ -1,12 +1,26 @@
-From bc266421a13f4967a3d5b49830c338f59e4f2dd5 Mon Sep 17 00:00:00 2001
+From 5e2cbfbe8275338318377a14c035c02a35427376 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 19/21] stop enabling search engine geolocation by default
 
 ---
+ .../browser/preferences/website/Website.java       |  2 +-
  .../search_geolocation_service.cc                  | 25 ++++++++++------------
- 1 file changed, 11 insertions(+), 14 deletions(-)
+ 2 files changed, 12 insertions(+), 15 deletions(-)
 
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
+index f76052cb2673..4fa6d9f8f172 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
+@@ -249,7 +249,7 @@ public class Website implements Serializable {
+     public void setGeolocationPermission(ContentSetting value) {
+         if (WebsitePreferenceBridge.shouldUseDSEGeolocationSetting(
+                     mOrigin.getOrigin(), false)) {
+-            WebsitePreferenceBridge.setDSEGeolocationSetting(value != ContentSetting.BLOCK);
++            WebsitePreferenceBridge.setDSEGeolocationSetting(value == ContentSetting.ALLOW);
+         } else {
+             if (mGeolocationInfo != null) {
+                 mGeolocationInfo.setContentSetting(value);
 diff --git a/chrome/browser/android/search_geolocation/search_geolocation_service.cc b/chrome/browser/android/search_geolocation/search_geolocation_service.cc
 index 0ed5540c3262..e5721d53c344 100644
 --- a/chrome/browser/android/search_geolocation/search_geolocation_service.cc
@@ -65,5 +79,5 @@ index 0ed5540c3262..e5721d53c344 100644
    if (pref.setting != new_setting) {
      pref.setting = new_setting;
 -- 
-2.14.2
+2.15.0
 

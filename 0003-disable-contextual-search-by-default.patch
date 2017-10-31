@@ -21,5 +21,5 @@ index 6543b3112906..23127d08a7b6 100644
  #endif  // defined(OS_ANDROID)
    registry->RegisterBooleanPref(prefs::kSessionExitedCleanly, true);
 -- 
-2.14.2
+2.15.0
 

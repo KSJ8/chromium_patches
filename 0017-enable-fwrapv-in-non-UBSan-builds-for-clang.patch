@@ -23,5 +23,5 @@ index d127ac912796..99574670c9a0 100644
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
 -- 
-2.14.2
+2.15.0
 

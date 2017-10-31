@@ -1,4 +1,4 @@
-From b99bca30bc94ec95218fe81684e295dbe8657c64 Mon Sep 17 00:00:00 2001
+From e16d0e8ff0bd45b504a937fd4debdad93705ffe4 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
 Subject: [PATCH 20/21] use Chromium branding in more places
@@ -30,5 +30,5 @@ index e6d626275137..5f37d45c6146 100644
  
        <!-- Sync strings in account management dialog -->
 -- 
-2.14.2
+2.15.0
 
