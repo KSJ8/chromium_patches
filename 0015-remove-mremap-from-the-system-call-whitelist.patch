@@ -1,4 +1,4 @@
-From 6122ecc4347aa7340bd127c2ed69bd9487597565 Mon Sep 17 00:00:00 2001
+From b7bd273fb7bf2d045c1e90ded02cdce476317e8e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
 Subject: [PATCH 15/21] remove mremap from the system call whitelist
@@ -10,7 +10,7 @@ Subject: [PATCH 15/21] remove mremap from the system call whitelist
  3 files changed, 3 deletions(-)
 
 diff --git a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
-index 5f76e35b6636..f9d607e8794c 100644
+index c2b7e823b059..296496ce16c2 100644
 --- a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
 +++ b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
 @@ -85,7 +85,6 @@ ResultExpr RendererProcessPolicy::EvaluateSyscall(int sysno) const {
@@ -34,10 +34,10 @@ index 13367964e64e..6486b080d4e6 100644
      case __NR_pwrite64:
      case __NR_sysinfo:
 diff --git a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
-index 62c09006eadc..0244f28b8643 100644
+index ca6f08a2c2bc..e3bf8f8bbe86 100644
 --- a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
 +++ b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
-@@ -89,7 +89,6 @@ ResultExpr BaselinePolicyAndroid::EvaluateSyscall(int sysno) const {
+@@ -92,7 +92,6 @@ ResultExpr BaselinePolicyAndroid::EvaluateSyscall(int sysno) const {
      case __NR_getdents64:
      case __NR_getpriority:
      case __NR_ioctl:
@@ -46,5 +46,5 @@ index 62c09006eadc..0244f28b8643 100644
      // Used on pre-N to initialize threads in ART.
      case __NR_modify_ldt:
 -- 
-2.15.0
+2.15.1
 

@@ -1,4 +1,4 @@
-From a5c90271634491ff375ab8cd6841630974a3bc58 Mon Sep 17 00:00:00 2001
+From c36e650bfec8b2080611138e3e377ffdd524fad2 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 14/21] mark non-secure origins as non-secure
@@ -8,7 +8,7 @@ Subject: [PATCH 14/21] mark non-secure origins as non-secure
  1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index 2dcd0d36d8c5..406352171d7b 100644
+index aa3054cf5d42..74298934b0e6 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
 @@ -97,10 +97,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
@@ -25,5 +25,5 @@ index 2dcd0d36d8c5..406352171d7b 100644
    }
  
 -- 
-2.15.0
+2.15.1
 

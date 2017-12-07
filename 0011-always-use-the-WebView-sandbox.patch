@@ -1,4 +1,4 @@
-From 849decec3882164df5895a2ddd351c56c15fec2c Mon Sep 17 00:00:00 2001
+From e3722fc018bc267a0c7757e64aaf771f84a466dc Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
 Subject: [PATCH 11/21] always use the WebView sandbox
@@ -8,10 +8,10 @@ Subject: [PATCH 11/21] always use the WebView sandbox
  1 file changed, 2 insertions(+), 14 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index 2c5777f845b7..da8640843e75 100644
+index e8ccdd87f7e7..5411d78b954d 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -228,20 +228,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -227,20 +227,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
  
          CommandLineUtil.initCommandLine();
  
@@ -35,5 +35,5 @@ index 2c5777f845b7..da8640843e75 100644
          ThreadUtils.setWillOverrideUiThread();
          // Load chromium library.
 -- 
-2.15.0
+2.15.1
 
