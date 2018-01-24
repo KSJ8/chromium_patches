@@ -1,4 +1,4 @@
-From 9e99d460e8a0c28843169eeaf256b8cede132e48 Mon Sep 17 00:00:00 2001
+From 015c514056d412cafc60a8b976e595b67a446174 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
 Subject: [PATCH 04/21] disable network prediction by default
@@ -21,5 +21,5 @@ index 651248390f50..4c55a198b4fe 100644
  
  enum class NetworkPredictionStatus {
 -- 
-2.15.1
+2.16.1
 

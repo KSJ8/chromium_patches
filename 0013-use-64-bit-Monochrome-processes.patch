@@ -1,4 +1,4 @@
-From f2c94b3f2b6e0ea8935e94d7c78e463f3691a2b9 Mon Sep 17 00:00:00 2001
+From 335000ebb7244ea404e3192b12af69e3db9ad03f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
 Subject: [PATCH 13/21] use 64-bit Monochrome processes
@@ -12,7 +12,7 @@ Subject: [PATCH 13/21] use 64-bit Monochrome processes
  5 files changed, 9 insertions(+), 25 deletions(-)
 
 diff --git a/android_webview/BUILD.gn b/android_webview/BUILD.gn
-index 096dc491579a..62f861badbbd 100644
+index 976a7974a308..183794381bdf 100644
 --- a/android_webview/BUILD.gn
 +++ b/android_webview/BUILD.gn
 @@ -404,7 +404,9 @@ if (android_64bit_target_cpu) {
@@ -26,10 +26,10 @@ index 096dc491579a..62f861badbbd 100644
      deps = [
        ":webview_entry_point",
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index 319f75ac7572..56c4e1a73b61 100644
+index fb8ab696d986..c2335d479e30 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -754,13 +754,7 @@ if (current_toolchain == default_toolchain) {
+@@ -818,13 +818,7 @@ if (current_toolchain == default_toolchain) {
  
    if (enable_resource_whitelist_generation) {
      generate_resource_whitelist("monochrome_resource_whitelist") {
@@ -44,7 +44,7 @@ index 319f75ac7572..56c4e1a73b61 100644
        deps = [
          ":monochrome($_fat_lib_toolchain)",
        ]
-@@ -874,14 +868,8 @@ if (current_toolchain == default_toolchain) {
+@@ -939,14 +933,8 @@ if (current_toolchain == default_toolchain) {
    }
  }  # current_toolchain == host_toolchain
  
@@ -60,9 +60,9 @@ index 319f75ac7572..56c4e1a73b61 100644
    shared_library("monochrome") {
      sources = [
        "../app/android/chrome_main_delegate_android_initializer.cc",
-@@ -906,10 +894,12 @@ if (!android_64bit_target_cpu ||
- 
+@@ -975,10 +963,12 @@ if (!android_64bit_target_cpu ||
      public_configs = extra_chrome_shared_library_configs
+     deps += extra_chrome_shared_library_deps
    }
 -} else {
 +}
@@ -76,10 +76,10 @@ index 319f75ac7572..56c4e1a73b61 100644
    }
  }
 diff --git a/chrome/android/chrome_public_apk_tmpl.gni b/chrome/android/chrome_public_apk_tmpl.gni
-index 0dc5104eaaf0..9a6eef26eb6b 100644
+index a81fc05d6da2..a8a694fdde9e 100644
 --- a/chrome/android/chrome_public_apk_tmpl.gni
 +++ b/chrome/android/chrome_public_apk_tmpl.gni
-@@ -102,13 +102,7 @@ template("chrome_public_apk_tmpl") {
+@@ -99,13 +99,7 @@ template("chrome_public_apk_tmpl") {
  
  template("monochrome_public_apk_tmpl") {
    chrome_public_apk_tmpl(target_name) {
@@ -107,15 +107,16 @@ index 5ae85dec51d1..934d13d806dc 100644
  
  {% block extra_keyset_definitions %}
 diff --git a/chrome/android/monochrome_android_manifest_jinja_variables.gni b/chrome/android/monochrome_android_manifest_jinja_variables.gni
-index dcbfa96764a1..8e6d7ccac9e2 100644
+index 820ce4f4c595..1246629675cd 100644
 --- a/chrome/android/monochrome_android_manifest_jinja_variables.gni
 +++ b/chrome/android/monochrome_android_manifest_jinja_variables.gni
-@@ -5,5 +5,4 @@
+@@ -5,6 +5,5 @@
  monochrome_android_manifest_jinja_variables = [
    "min_sdk_version=24",
    "sandboxed_service_exported=true",
 -  "use32bitAbi=android:use32bitAbi=\"true\"",
+   "sandboxed_service_extra_flags=android:visibleToInstantApps=\"true\"",
  ]
 -- 
-2.15.1
+2.16.1
 

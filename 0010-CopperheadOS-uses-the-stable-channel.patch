@@ -1,4 +1,4 @@
-From 856fca146e2f2a6db76ce278566f212adc668a60 Mon Sep 17 00:00:00 2001
+From 323113f9caeea04a126cda7366e7b5ee0ee1cc5a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 4 Dec 2016 22:30:01 -0500
 Subject: [PATCH 10/21] CopperheadOS uses the stable channel
@@ -8,10 +8,10 @@ Subject: [PATCH 10/21] CopperheadOS uses the stable channel
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/version_info/channel_android.cc b/components/version_info/channel_android.cc
-index b63b5ac924cf..4380386532c9 100644
+index 4e1cd4700d7c..416ed78cb048 100644
 --- a/components/version_info/channel_android.cc
 +++ b/components/version_info/channel_android.cc
-@@ -19,7 +19,7 @@ Channel ChannelFromPackageName(const char* package_name) {
+@@ -18,7 +18,7 @@ Channel ChannelFromPackageName(const char* package_name) {
    if (!strcmp(package_name, "com.chrome.canary"))
      return Channel::CANARY;
  
@@ -21,5 +21,5 @@ index b63b5ac924cf..4380386532c9 100644
  
  }  // namespace version_info
 -- 
-2.15.1
+2.16.1
 

@@ -1,29 +1,32 @@
-From c36e650bfec8b2080611138e3e377ffdd524fad2 Mon Sep 17 00:00:00 2001
+From 1536a8e2367db0afe5bcf59ee0ccaafe8c5933dd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 14/21] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ components/security_state/core/security_state.cc | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index aa3054cf5d42..74298934b0e6 100644
+index d045093fed60..d7cadec67d6c 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -97,10 +97,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
+@@ -68,13 +68,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
      if (!GetSecurityLevelAndHistogramValueForNonSecureFieldTrial(
-             group, displayed_sensitive_input_on_http, is_incognito,
-             input_events, &level, mark_http_as)) {
--      *mark_http_as = HTTP_SHOW_WARNING_ON_SENSITIVE_FIELDS;
--      level = displayed_sensitive_input_on_http
+             group, is_incognito, input_events, &level, mark_http_as)) {
+       // No command-line switch or field trial is in effect.
+-      // Default to warning on incognito or editing or sensitive form fields.
+-      *mark_http_as = NON_SECURE_WHILE_INCOGNITO_OR_EDITING;
+-      level = (is_incognito || input_events.insecure_field_edited ||
+-               input_events.password_field_shown ||
+-               input_events.credit_card_field_edited)
 -                  ? security_state::HTTP_SHOW_WARNING
 -                  : NONE;
 +      *mark_http_as = NON_SECURE;
-+      level = DANGEROUS;
++      level = security_state::HTTP_SHOW_WARNING;
      }
    }
  
 -- 
-2.15.1
+2.16.1
 

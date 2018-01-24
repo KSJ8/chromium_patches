@@ -1,4 +1,4 @@
-From 5bba108124d0c5379d09478fa85af81e02bdd6b5 Mon Sep 17 00:00:00 2001
+From 3daa25c32d9d3cacdaf7a490d23210e454b544cd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 18/21] add DuckDuckGo as the default search engine
@@ -52,7 +52,7 @@ index c19dd0e91cf9..02f6b1612621 100644
  };
  
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 862e001a88bb..0b97ffa59ca4 100644
+index 6be17eeb06fe..f255e1b4bdb4 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
 @@ -50,548 +50,548 @@ namespace {
@@ -714,5 +714,5 @@ index 862e001a88bb..0b97ffa59ca4 100644
      &yahoo, &yahoo_ar, &yahoo_at, &yahoo_au, &yahoo_br, &yahoo_ca, &yahoo_ch,
      &yahoo_cl, &yahoo_co, &yahoo_de, &yahoo_dk, &yahoo_es, &yahoo_fi, &yahoo_fr,
 -- 
-2.15.1
+2.16.1
 

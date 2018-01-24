@@ -1,38 +1,16 @@
-From b7bd273fb7bf2d045c1e90ded02cdce476317e8e Mon Sep 17 00:00:00 2001
+From 6f0b6947fb277d873a1c62d690e272f4888a8731 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
 Subject: [PATCH 15/21] remove mremap from the system call whitelist
 
 ---
- content/common/sandbox_linux/bpf_renderer_policy_linux.cc    | 1 -
- content/common/sandbox_linux/bpf_utility_policy_linux.cc     | 1 -
- sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc | 1 -
- 3 files changed, 3 deletions(-)
+ sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc             | 1 -
+ services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc           | 1 -
+ .../service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc     | 1 -
+ services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc      | 1 -
+ services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc       | 1 -
+ 5 files changed, 5 deletions(-)
 
-diff --git a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
-index c2b7e823b059..296496ce16c2 100644
---- a/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
-+++ b/content/common/sandbox_linux/bpf_renderer_policy_linux.cc
-@@ -85,7 +85,6 @@ ResultExpr RendererProcessPolicy::EvaluateSyscall(int sysno) const {
- #if defined(__i386__) || defined(__arm__)
-     case __NR_ugetrlimit:
- #endif
--    case __NR_mremap:  // See crbug.com/149834.
-     case __NR_pread64:
-     case __NR_pwrite64:
-     case __NR_sched_get_priority_max:
-diff --git a/content/common/sandbox_linux/bpf_utility_policy_linux.cc b/content/common/sandbox_linux/bpf_utility_policy_linux.cc
-index 13367964e64e..6486b080d4e6 100644
---- a/content/common/sandbox_linux/bpf_utility_policy_linux.cc
-+++ b/content/common/sandbox_linux/bpf_utility_policy_linux.cc
-@@ -39,7 +39,6 @@ ResultExpr UtilityProcessPolicy::EvaluateSyscall(int sysno) const {
- #if defined(__i386__) || defined(__arm__)
-     case __NR_ugetrlimit:
- #endif
--    case __NR_mremap:  // https://crbug.com/546204
-     case __NR_pread64:
-     case __NR_pwrite64:
-     case __NR_sysinfo:
 diff --git a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
 index ca6f08a2c2bc..e3bf8f8bbe86 100644
 --- a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
@@ -45,6 +23,54 @@ index ca6f08a2c2bc..e3bf8f8bbe86 100644
  #if defined(__i386__)
      // Used on pre-N to initialize threads in ART.
      case __NR_modify_ldt:
+diff --git a/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc b/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
+index eca1b3d3e230..a183ff7c8fc5 100644
+--- a/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
++++ b/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
+@@ -38,7 +38,6 @@ ResultExpr CdmProcessPolicy::EvaluateSyscall(int sysno) const {
+ #if defined(__i386__) || defined(__arm__)
+     case __NR_ugetrlimit:
+ #endif
+-    case __NR_mremap:  // https://crbug.com/546204
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sysinfo:
+diff --git a/services/service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc b/services/service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc
+index a15612e4d026..3421d2e916ae 100644
+--- a/services/service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc
++++ b/services/service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc
+@@ -39,7 +39,6 @@ ResultExpr PdfCompositorProcessPolicy::EvaluateSyscall(int sysno) const {
+ #if defined(__i386__) || defined(__arm__)
+     case __NR_ugetrlimit:
+ #endif
+-    case __NR_mremap:  // https://crbug.com/546204
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sysinfo:
+diff --git a/services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc b/services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc
+index bbeb3152da5d..ec19b8a4bca9 100644
+--- a/services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc
++++ b/services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc
+@@ -85,7 +85,6 @@ ResultExpr RendererProcessPolicy::EvaluateSyscall(int sysno) const {
+ #if defined(__i386__) || defined(__arm__)
+     case __NR_ugetrlimit:
+ #endif
+-    case __NR_mremap:  // See crbug.com/149834.
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sched_get_priority_max:
+diff --git a/services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc b/services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc
+index 1b2c0fda4c2d..57b0f31fb91e 100644
+--- a/services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc
++++ b/services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc
+@@ -37,7 +37,6 @@ ResultExpr UtilityProcessPolicy::EvaluateSyscall(int sysno) const {
+ #if defined(__i386__) || defined(__arm__)
+     case __NR_ugetrlimit:
+ #endif
+-    case __NR_mremap:  // https://crbug.com/546204
+     case __NR_pread64:
+     case __NR_pwrite64:
+     case __NR_sysinfo:
 -- 
-2.15.1
+2.16.1
 

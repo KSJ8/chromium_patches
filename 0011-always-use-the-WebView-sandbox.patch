@@ -1,4 +1,4 @@
-From e3722fc018bc267a0c7757e64aaf771f84a466dc Mon Sep 17 00:00:00 2001
+From 1f2e23715887ec4b485dce33f7bcda5df02d151f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
 Subject: [PATCH 11/21] always use the WebView sandbox
@@ -8,15 +8,15 @@ Subject: [PATCH 11/21] always use the WebView sandbox
  1 file changed, 2 insertions(+), 14 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index e8ccdd87f7e7..5411d78b954d 100644
+index a32b6cf352e0..2c573dbf5bfc 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -227,20 +227,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -226,20 +226,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
  
          CommandLineUtil.initCommandLine();
  
 -        boolean multiProcess = false;
--        if (BuildInfo.isAtLeastO()) {
+-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 -            // Ask the system if multiprocess should be enabled on O+.
 -            multiProcess = mWebViewDelegate.isMultiProcessEnabled();
 -        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -35,5 +35,5 @@ index e8ccdd87f7e7..5411d78b954d 100644
          ThreadUtils.setWillOverrideUiThread();
          // Load chromium library.
 -- 
-2.15.1
+2.16.1
 

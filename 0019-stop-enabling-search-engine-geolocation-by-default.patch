@@ -1,18 +1,18 @@
-From 18a176578a03cc28c38d4fe91e0250605e139d81 Mon Sep 17 00:00:00 2001
+From 2098fbdcb5031ca8c6abdb3f2bc1aa446fceb1e3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 19/21] stop enabling search engine geolocation by default
 
 ---
  .../browser/preferences/website/Website.java       |  2 +-
- .../search_geolocation_service.cc                  | 25 ++++++++++------------
+ .../search_permissions_service.cc                  | 25 ++++++++++------------
  2 files changed, 12 insertions(+), 15 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-index f5943a8d5b7b..f708360848c0 100644
+index a4ef740839f9..3741555fd67c 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-@@ -250,7 +250,7 @@ public class Website implements Serializable {
+@@ -265,7 +265,7 @@ public class Website implements Serializable {
      public void setGeolocationPermission(ContentSetting value) {
          if (WebsitePreferenceBridge.shouldUseDSEGeolocationSetting(
                      mOrigin.getOrigin(), false)) {
@@ -21,11 +21,11 @@ index f5943a8d5b7b..f708360848c0 100644
          } else {
              if (mGeolocationInfo != null) {
                  mGeolocationInfo.setContentSetting(value);
-diff --git a/chrome/browser/android/search_geolocation/search_geolocation_service.cc b/chrome/browser/android/search_geolocation/search_geolocation_service.cc
-index c9916ccb9871..53b29a0f507b 100644
---- a/chrome/browser/android/search_geolocation/search_geolocation_service.cc
-+++ b/chrome/browser/android/search_geolocation/search_geolocation_service.cc
-@@ -200,7 +200,14 @@ void SearchGeolocationService::SetDSEGeolocationSetting(bool setting) {
+diff --git a/chrome/browser/android/search_permissions/search_permissions_service.cc b/chrome/browser/android/search_permissions/search_permissions_service.cc
+index d0363730d7df..28d8d27f9bda 100644
+--- a/chrome/browser/android/search_permissions/search_permissions_service.cc
++++ b/chrome/browser/android/search_permissions/search_permissions_service.cc
+@@ -197,7 +197,14 @@ void SearchPermissionsService::SetDSEGeolocationSetting(bool setting) {
    pref.setting = setting;
    SetDSEGeolocationPref(pref);
  
@@ -40,8 +40,8 @@ index c9916ccb9871..53b29a0f507b 100644
 +  }
  }
  
- url::Origin SearchGeolocationService::GetDSEOriginIfEnabled() {
-@@ -224,11 +231,7 @@ void SearchGeolocationService::OnDSEChanged() {
+ url::Origin SearchPermissionsService::GetDSEOriginIfEnabled() {
+@@ -221,11 +228,7 @@ void SearchPermissionsService::OnDSEChanged() {
    // Remove any geolocation embargo on the URL.
    PermissionDecisionAutoBlocker::GetForProfile(profile_)->RemoveEmbargoByUrl(
        delegate_->GetDSEOrigin().GetURL(), CONTENT_SETTINGS_TYPE_GEOLOCATION);
@@ -54,7 +54,7 @@ index c9916ccb9871..53b29a0f507b 100644
  
    if (new_dse_name != pref.dse_name && pref.setting)
      SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -271,7 +274,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
+@@ -241,7 +244,7 @@ void SearchPermissionsService::InitializeDSEGeolocationSettingIfNeeded() {
  
      PrefValue pref;
      pref.dse_name = delegate_->GetDSEName();
@@ -63,8 +63,8 @@ index c9916ccb9871..53b29a0f507b 100644
      SetDSEGeolocationPref(pref);
  
      SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -281,13 +284,7 @@ void SearchGeolocationService::InitializeDSEGeolocationSettingIfNeeded() {
- void SearchGeolocationService::EnsureDSEGeolocationSettingIsValid() {
+@@ -251,13 +254,7 @@ void SearchPermissionsService::InitializeDSEGeolocationSettingIfNeeded() {
+ void SearchPermissionsService::EnsureDSEGeolocationSettingIsValid() {
    PrefValue pref = GetDSEGeolocationPref();
    ContentSetting content_setting = GetCurrentContentSetting();
 -  bool new_setting = pref.setting;
@@ -79,5 +79,5 @@ index c9916ccb9871..53b29a0f507b 100644
    if (pref.setting != new_setting) {
      pref.setting = new_setting;
 -- 
-2.15.1
+2.16.1
 
