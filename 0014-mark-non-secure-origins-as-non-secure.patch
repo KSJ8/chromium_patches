@@ -1,4 +1,4 @@
-From 1536a8e2367db0afe5bcf59ee0ccaafe8c5933dd Mon Sep 17 00:00:00 2001
+From 81a659cf8608244166c458057c0e924318325832 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 14/21] mark non-secure origins as non-secure
@@ -8,7 +8,7 @@ Subject: [PATCH 14/21] mark non-secure origins as non-secure
  1 file changed, 2 insertions(+), 7 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index d045093fed60..d7cadec67d6c 100644
+index d045093fed60..65a46d001446 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
 @@ -68,13 +68,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
@@ -23,7 +23,7 @@ index d045093fed60..d7cadec67d6c 100644
 -                  ? security_state::HTTP_SHOW_WARNING
 -                  : NONE;
 +      *mark_http_as = NON_SECURE;
-+      level = security_state::HTTP_SHOW_WARNING;
++      level = DANGEROUS;
      }
    }
  

@@ -1,4 +1,4 @@
-From 3daa25c32d9d3cacdaf7a490d23210e454b544cd Mon Sep 17 00:00:00 2001
+From f6c806fb6479a9b9ffe93b2d8a3f023dfb3ed1ac Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 18/21] add DuckDuckGo as the default search engine
