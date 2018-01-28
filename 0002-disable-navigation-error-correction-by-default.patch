@@ -1,7 +1,7 @@
 From 8680ee5eb771163185bc9e500f6a8caff6328fb2 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:29:58 -0500
-Subject: [PATCH 02/21] disable navigation error correction by default
+Subject: [PATCH 02/22] disable navigation error correction by default
 
 ---
  chrome/browser/ui/navigation_correction_tab_observer.cc | 2 +-
