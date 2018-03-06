@@ -1,7 +1,7 @@
-From 335000ebb7244ea404e3192b12af69e3db9ad03f Mon Sep 17 00:00:00 2001
+From 6cd10a250ab8e2ff74aba313c1866a067ef1b3e2 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
-Subject: [PATCH 13/22] use 64-bit Monochrome processes
+Subject: [PATCH 13/23] use 64-bit Monochrome processes
 
 ---
  android_webview/BUILD.gn                           |  2 ++
@@ -118,5 +118,5 @@ index 820ce4f4c595..1246629675cd 100644
    "sandboxed_service_extra_flags=android:visibleToInstantApps=\"true\"",
  ]
 -- 
-2.16.1
+2.16.2
 

@@ -1,0 +1,28 @@
+From f50cfb234e3d30c878f830e281c7d0650bb10cfb Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Tue, 6 Mar 2018 00:27:41 -0500
+Subject: [PATCH 23/23] disable showing popular sites by default
+
+---
+ components/ntp_tiles/field_trial.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/components/ntp_tiles/field_trial.cc b/components/ntp_tiles/field_trial.cc
+index 60ed1b61dc79..576d78a0542e 100644
+--- a/components/ntp_tiles/field_trial.cc
++++ b/components/ntp_tiles/field_trial.cc
+@@ -42,9 +42,9 @@ bool ShouldShowPopularSites() {
+   }
+ #endif
+ 
+-  // Until any configuration is fetched, the default is to enable popular sites.
++  // Until any configuration is fetched, the default is to disable popular sites.
+   if (group_name.empty()) {
+-    return true;
++    return false;
+   }
+ 
+   return base::StartsWith(group_name, "Enabled",
+-- 
+2.16.2
+

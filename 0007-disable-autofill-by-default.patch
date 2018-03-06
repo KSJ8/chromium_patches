@@ -1,7 +1,7 @@
-From 7e15fd1889e6abc7bbcf38a3ace8d8c812652472 Mon Sep 17 00:00:00 2001
+From 4a141bce2b8663f819dbfc0ad2aa97a1fa64c93c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 6 Jan 2017 23:20:08 -0500
-Subject: [PATCH 07/22] disable autofill by default
+Subject: [PATCH 07/23] disable autofill by default
 
 ---
  components/autofill/core/browser/autofill_manager.cc | 2 +-
@@ -21,5 +21,5 @@ index d218556ac397..80ea1cf18ebd 100644
    registry->RegisterBooleanPref(
        prefs::kAutofillProfileUseDatesFixed, false,
 -- 
-2.16.1
+2.16.2
 

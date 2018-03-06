@@ -1,7 +1,7 @@
-From 23b4182987f7632f830eadf11afae65068a5507e Mon Sep 17 00:00:00 2001
+From 986abc83c1da6ad24131ddbc21417fe0e6d16e30 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 11:16:11 -0400
-Subject: [PATCH 01/22] enable dubious Do Not Track feature by default
+Subject: [PATCH 01/23] enable dubious Do Not Track feature by default
 
 ---
  chrome/browser/ui/browser_ui_prefs.cc | 2 +-
@@ -21,5 +21,5 @@ index bcd4d0ec24c5..e94149be1cb2 100644
  #if !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
    registry->RegisterBooleanPref(prefs::kPrintPreviewUseSystemDefaultPrinter,
 -- 
-2.16.1
+2.16.2
 

@@ -1,7 +1,7 @@
-From 7cf1feb9cee1554130bf738fa9b8a207fd5fcefa Mon Sep 17 00:00:00 2001
+From cadcc37b55cfebf0323f5ba78428cde7794110e7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
-Subject: [PATCH 17/22] enable -fwrapv in non-UBSan builds for clang
+Subject: [PATCH 17/23] enable -fwrapv in non-UBSan builds for clang
 
 ---
  build/config/compiler/BUILD.gn | 4 ++++
@@ -23,5 +23,5 @@ index 18eb75320d09..b875550ddd58 100644
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
 -- 
-2.16.1
+2.16.2
 

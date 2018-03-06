@@ -1,7 +1,7 @@
-From 4e807d8c7850bb4a9ce8994316628acd65f7a5dc Mon Sep 17 00:00:00 2001
+From afebc4f21909dd6a4c4af3fd8e665a684ef1dbb8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
-Subject: [PATCH 05/22] disable metrics by default
+Subject: [PATCH 05/23] disable metrics by default
 
 ---
  .../src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java  | 2 +-
@@ -21,5 +21,5 @@ index f46c4879b2c1..ce3120cb0153 100644
      private boolean mNativeInitialized;
  
 -- 
-2.16.1
+2.16.2
 
