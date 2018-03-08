@@ -1,32 +1,39 @@
-From 68f6f99909f68b8a984cafce680f0d1398384142 Mon Sep 17 00:00:00 2001
+From abf6d91877dcea49e62c93f33c95fb1fd2d19896 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 14/23] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 9 ++-------
- 1 file changed, 2 insertions(+), 7 deletions(-)
+ components/security_state/core/security_state.cc | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index d045093fed60..65a46d001446 100644
+index 54531e28f4a9..b7369adaf30b 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -68,13 +68,8 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
-     if (!GetSecurityLevelAndHistogramValueForNonSecureFieldTrial(
-             group, is_incognito, input_events, &level, mark_http_as)) {
-       // No command-line switch or field trial is in effect.
--      // Default to warning on incognito or editing or sensitive form fields.
--      *mark_http_as = NON_SECURE_WHILE_INCOGNITO_OR_EDITING;
--      level = (is_incognito || input_events.insecure_field_edited ||
--               input_events.password_field_shown ||
--               input_events.credit_card_field_edited)
--                  ? security_state::HTTP_SHOW_WARNING
--                  : NONE;
-+      *mark_http_as = NON_SECURE;
-+      level = DANGEROUS;
+@@ -65,21 +65,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
      }
    }
  
+-  // No warning treatment is configured via field trial. Default to warning on
+-  // incognito or editing or sensitive form fields.
+-  security_info->security_level =
+-      (is_incognito || input_events.insecure_field_edited ||
+-       input_events.password_field_shown ||
+-       input_events.credit_card_field_edited)
+-          ? HTTP_SHOW_WARNING
+-          : NONE;
+-  security_info->incognito_downgraded_security_level =
+-      (is_incognito && !is_error_page &&
+-       security_info->security_level == HTTP_SHOW_WARNING);
+-
+-  security_info->field_edit_downgraded_security_level =
+-      (security_info->security_level == HTTP_SHOW_WARNING &&
+-       input_events.insecure_field_edited);
++  security_info->security_level = DANGEROUS;
+ }
+ 
+ ContentStatus GetContentStatus(bool displayed, bool ran) {
 -- 
 2.16.2
 

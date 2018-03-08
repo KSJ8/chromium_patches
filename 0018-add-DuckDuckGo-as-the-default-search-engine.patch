@@ -1,4 +1,4 @@
-From 1ecd464bc4fca1d73d1a29f85091d17ffac21687 Mon Sep 17 00:00:00 2001
+From 2196c8a1c40af7257041f2366a37eb896ac668ca Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 18/23] add DuckDuckGo as the default search engine
@@ -10,7 +10,7 @@ Subject: [PATCH 18/23] add DuckDuckGo as the default search engine
  3 files changed, 121 insertions(+), 110 deletions(-)
 
 diff --git a/components/search_engines/prepopulated_engines.json b/components/search_engines/prepopulated_engines.json
-index 002b6c0aa6e9..2fbe2369ec94 100644
+index 5127a1a1f286..5dbbe0ea8867 100644
 --- a/components/search_engines/prepopulated_engines.json
 +++ b/components/search_engines/prepopulated_engines.json
 @@ -10,7 +10,7 @@
@@ -22,7 +22,7 @@ index 002b6c0aa6e9..2fbe2369ec94 100644
  //    89, 91+
  //
  // IDs > 1000 are reserved for distribution custom engines.
-@@ -110,6 +110,16 @@
+@@ -114,6 +114,16 @@
        "id": 68
      },
  
@@ -52,10 +52,10 @@ index c19dd0e91cf9..02f6b1612621 100644
  };
  
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 6be17eeb06fe..f255e1b4bdb4 100644
+index 0c686f6ebda2..d287c4f0d611 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
-@@ -50,548 +50,548 @@ namespace {
+@@ -51,548 +51,548 @@ namespace {
  
  // Default (for countries with no better engine set)
  const PrepopulatedEngine* const engines_default[] = {

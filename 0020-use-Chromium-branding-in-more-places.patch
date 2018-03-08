@@ -1,4 +1,4 @@
-From 48b145a2d3a5f63da3ff8f7fb6323d82cc00535d Mon Sep 17 00:00:00 2001
+From ee8ca42ffc249f55319052eadfd0bafeb4e86e21 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
 Subject: [PATCH 20/23] use Chromium branding in more places
@@ -8,10 +8,10 @@ Subject: [PATCH 20/23] use Chromium branding in more places
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/strings/android_chrome_strings.grd b/chrome/android/java/strings/android_chrome_strings.grd
-index be47b1e8ab1a..f93d1172cd3a 100644
+index 16e69e261fd2..1bd0c782096f 100644
 --- a/chrome/android/java/strings/android_chrome_strings.grd
 +++ b/chrome/android/java/strings/android_chrome_strings.grd
-@@ -1140,7 +1140,7 @@ To obtain new licenses, connect to the internet and play your downloaded content
+@@ -1170,7 +1170,7 @@ To obtain new licenses, connect to the internet and play your downloaded content
  
        <!-- About Chrome preferences -->
        <message name="IDS_PREFS_ABOUT_CHROME" desc="Title for the About Chrome page. [CHAR-LIMIT=32]">
@@ -20,7 +20,7 @@ index be47b1e8ab1a..f93d1172cd3a 100644
        </message>
        <message name="IDS_LEGAL_INFORMATION_SUMMARY" desc="Summary for legal information" meaning="Android">
          Copyright <ph name="year">%1$d<ex>2014</ex></ph> Google Inc. All rights reserved.
-@@ -1199,7 +1199,7 @@ To obtain new licenses, connect to the internet and play your downloaded content
+@@ -1229,7 +1229,7 @@ To obtain new licenses, connect to the internet and play your downloaded content
        </message>
  
        <message name="IDS_POWERED_BY_CHROME_MESSAGE" desc="A message indicating that the current page is running in Chrome.">

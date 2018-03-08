@@ -1,4 +1,4 @@
-From c143e759124285b0660192f4d221aedeaa00a2d8 Mon Sep 17 00:00:00 2001
+From 71342bdddb95e37ea497c22f264fa773263cefb1 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 28 Jan 2018 15:57:04 -0500
 Subject: [PATCH 22/23] CopperheadOS icon recolor
@@ -63,7 +63,7 @@ Current incantation of the recolor command:
  create mode 100644 chrome/android/java/res_chromium_copperheados/values/channel_constants.xml
 
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index c2335d479e30..53da1d601d5b 100644
+index a6dc220506bd..df123fdd4d3c 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
 @@ -89,7 +89,7 @@ jinja_template("chrome_sync_shell_android_manifest") {
@@ -75,7 +75,7 @@ index c2335d479e30..53da1d601d5b 100644
    ]
    deps = [
      ":chrome_strings_grd",
-@@ -665,7 +665,7 @@ if (enable_vr) {
+@@ -672,7 +672,7 @@ if (enable_vr) {
  
  # Overrides icon / name defined in chrome_java_resources.
  android_resources("chrome_public_apk_resources") {

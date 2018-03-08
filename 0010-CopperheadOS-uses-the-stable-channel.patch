@@ -1,4 +1,4 @@
-From 4b2f31980c73a39db318cfe8d560deaf80a44314 Mon Sep 17 00:00:00 2001
+From 3c88a3e804bd769e93ece4874bbd1c576b28bed3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 4 Dec 2016 22:30:01 -0500
 Subject: [PATCH 10/23] CopperheadOS uses the stable channel

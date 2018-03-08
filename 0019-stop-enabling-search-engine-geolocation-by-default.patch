@@ -1,83 +1,69 @@
-From e2ab38bd6c31076406cb35cf7f4ba0c80a65c655 Mon Sep 17 00:00:00 2001
+From e633d774bfeeba10d324b7734a529b6637dc24ad Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 19/23] stop enabling search engine geolocation by default
 
 ---
- .../browser/preferences/website/Website.java       |  2 +-
- .../search_permissions_service.cc                  | 25 ++++++++++------------
- 2 files changed, 12 insertions(+), 15 deletions(-)
+ .../search_permissions/search_permissions_service.cc   | 18 ++++--------------
+ 1 file changed, 4 insertions(+), 14 deletions(-)
 
-diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-index a4ef740839f9..3741555fd67c 100644
---- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-+++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/website/Website.java
-@@ -265,7 +265,7 @@ public class Website implements Serializable {
-     public void setGeolocationPermission(ContentSetting value) {
-         if (WebsitePreferenceBridge.shouldUseDSEGeolocationSetting(
-                     mOrigin.getOrigin(), false)) {
--            WebsitePreferenceBridge.setDSEGeolocationSetting(value != ContentSetting.BLOCK);
-+            WebsitePreferenceBridge.setDSEGeolocationSetting(value == ContentSetting.ALLOW);
-         } else {
-             if (mGeolocationInfo != null) {
-                 mGeolocationInfo.setContentSetting(value);
 diff --git a/chrome/browser/android/search_permissions/search_permissions_service.cc b/chrome/browser/android/search_permissions/search_permissions_service.cc
-index d0363730d7df..28d8d27f9bda 100644
+index c8ba805c6655..6dda366faf69 100644
 --- a/chrome/browser/android/search_permissions/search_permissions_service.cc
 +++ b/chrome/browser/android/search_permissions/search_permissions_service.cc
-@@ -197,7 +197,14 @@ void SearchPermissionsService::SetDSEGeolocationSetting(bool setting) {
-   pref.setting = setting;
-   SetDSEGeolocationPref(pref);
+@@ -196,7 +196,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
+   DCHECK(dse_url.is_empty() || IsPermissionControlledByDSE(type, dse_origin));
  
--  ResetContentSetting();
-+  url::Origin origin = delegate_->GetDSEOrigin();
-+  if (setting) {
-+      host_content_settings_map_->SetContentSettingDefaultScope(
-+          origin.GetURL(), origin.GetURL(), CONTENT_SETTINGS_TYPE_GEOLOCATION,
-+          std::string(), CONTENT_SETTING_ALLOW);
-+  } else {
-+      ResetContentSetting();
-+  }
+   if (!dse_url.is_empty())
+-    SetContentSetting(dse_url, type, CONTENT_SETTING_ALLOW);
++    SetContentSetting(dse_url, type, CONTENT_SETTING_BLOCK);
  }
  
- url::Origin SearchPermissionsService::GetDSEOriginIfEnabled() {
-@@ -221,11 +228,7 @@ void SearchPermissionsService::OnDSEChanged() {
-   // Remove any geolocation embargo on the URL.
-   PermissionDecisionAutoBlocker::GetForProfile(profile_)->RemoveEmbargoByUrl(
-       delegate_->GetDSEOrigin().GetURL(), CONTENT_SETTINGS_TYPE_GEOLOCATION);
--  if (content_setting == CONTENT_SETTING_BLOCK && pref.setting) {
--    pref.setting = false;
--  } else if (content_setting == CONTENT_SETTING_ALLOW && !pref.setting) {
--    ResetContentSetting();
--  }
-+  pref.setting = content_setting == CONTENT_SETTING_ALLOW;
+ void SearchPermissionsService::ResetDSEPermissions() {
+@@ -343,11 +343,6 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+     return;
+   }
  
-   if (new_dse_name != pref.dse_name && pref.setting)
-     SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -241,7 +244,7 @@ void SearchPermissionsService::InitializeDSEGeolocationSettingIfNeeded() {
+-  // If we get to here, the DSE is not disabled by enterprise policy. If it was
+-  // previously enterprise controlled, we initialize the setting to BLOCK since
+-  // we don't know what the user's setting was previously.
+-  bool was_enterprise_controlled =
+-      pref_service_->GetBoolean(prefs::kDSEWasDisabledByPolicy);
+   pref_service_->ClearPref(prefs::kDSEWasDisabledByPolicy);
  
-     PrefValue pref;
-     pref.dse_name = delegate_->GetDSEName();
--    pref.setting = content_setting != CONTENT_SETTING_BLOCK;
-+    pref.setting = content_setting == CONTENT_SETTING_ALLOW;
-     SetDSEGeolocationPref(pref);
+   // Initialize the pref for geolocation if it hasn't been initialized yet.
+@@ -372,8 +367,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+       bool dse_setting = false;
+       dict->GetBoolean(kDSESettingKeyDeprecated, &dse_setting);
+       if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
+-        dse_geolocation_setting =
+-            dse_setting ? CONTENT_SETTING_ALLOW : CONTENT_SETTING_BLOCK;
++        dse_geolocation_setting = CONTENT_SETTING_BLOCK;
+       }
  
-     SearchGeolocationDisclosureTabHelper::ResetDisclosure(profile_);
-@@ -251,13 +254,7 @@ void SearchPermissionsService::InitializeDSEGeolocationSettingIfNeeded() {
- void SearchPermissionsService::EnsureDSEGeolocationSettingIsValid() {
-   PrefValue pref = GetDSEGeolocationPref();
-   ContentSetting content_setting = GetCurrentContentSetting();
--  bool new_setting = pref.setting;
--
--  if (pref.setting && content_setting == CONTENT_SETTING_BLOCK) {
--    new_setting = false;
--  } else if (!pref.setting && content_setting == CONTENT_SETTING_ALLOW) {
--    new_setting = true;
--  }
-+  bool new_setting = content_setting == CONTENT_SETTING_ALLOW;
+       // Delete setting.
+@@ -381,9 +375,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+     } else if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
+       // If the user hasn't explicitly allowed or blocked geolocation for the
+       // DSE, initialize it to allowed.
+-      dse_geolocation_setting = was_enterprise_controlled
+-                                    ? CONTENT_SETTING_BLOCK
+-                                    : CONTENT_SETTING_ALLOW;
++      dse_geolocation_setting = CONTENT_SETTING_BLOCK;
+     }
  
-   if (pref.setting != new_setting) {
-     pref.setting = new_setting;
+     // Update the content setting with the auto-grants for the DSE.
+@@ -411,9 +403,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+     // If the user hasn't explicitly allowed or blocked notifications for the
+     // DSE, initialize it to allowed.
+     if (dse_notifications_setting == CONTENT_SETTING_ASK) {
+-      dse_notifications_setting = was_enterprise_controlled
+-                                      ? CONTENT_SETTING_BLOCK
+-                                      : CONTENT_SETTING_ALLOW;
++      dse_notifications_setting = CONTENT_SETTING_BLOCK;
+     }
+ 
+     // Update the content setting with the auto-grants for the DSE.
 -- 
 2.16.2
 

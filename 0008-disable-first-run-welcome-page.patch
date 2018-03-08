@@ -1,4 +1,4 @@
-From 2ba5b415270fe0dd15295a29bf8866add11e3262 Mon Sep 17 00:00:00 2001
+From 63d11b6de2e9b88daaeedad6c1be5e164d3646d3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
 Subject: [PATCH 08/23] disable first run welcome page
@@ -8,10 +8,10 @@ Subject: [PATCH 08/23] disable first run welcome page
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index 8c963542819a..6ae53f97fe42 100644
+index d87c43dc04a0..4a2d6af33d07 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-@@ -86,7 +86,7 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
+@@ -84,7 +84,7 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
  
      private static FirstRunActivityObserver sObserver;
  
@@ -20,7 +20,7 @@ index 8c963542819a..6ae53f97fe42 100644
  
      private String mResultSignInAccountName;
      private boolean mResultIsDefaultAccount;
-@@ -212,7 +212,7 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
+@@ -206,7 +206,7 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa
                  }
  
                  mFreProperties = freProperties;
