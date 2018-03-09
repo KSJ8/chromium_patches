@@ -1,11 +1,12 @@
-From 22b43d705cb59a3dad292060a59fb822e2adc486 Mon Sep 17 00:00:00 2001
+From 0908596e42a234f76cef6833cea6b323fed0252c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 23/23] disable showing popular sites by default
 
 ---
- components/ntp_tiles/field_trial.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ components/ntp_tiles/field_trial.cc               | 4 ++--
+ testing/variations/fieldtrial_testing_config.json | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/components/ntp_tiles/field_trial.cc b/components/ntp_tiles/field_trial.cc
 index 60ed1b61dc79..576d78a0542e 100644
@@ -23,6 +24,19 @@ index 60ed1b61dc79..576d78a0542e 100644
    }
  
    return base::StartsWith(group_name, "Enabled",
+diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
+index b1997597ef5c..56bfd256c50a 100644
+--- a/testing/variations/fieldtrial_testing_config.json
++++ b/testing/variations/fieldtrial_testing_config.json
+@@ -2022,7 +2022,7 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "EnabledFull"
++                    "name": "Disabled"
+                 }
+             ]
+         }
 -- 
 2.16.2
 
