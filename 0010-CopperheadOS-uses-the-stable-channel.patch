@@ -1,7 +1,7 @@
 From 3c88a3e804bd769e93ece4874bbd1c576b28bed3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 4 Dec 2016 22:30:01 -0500
-Subject: [PATCH 10/23] CopperheadOS uses the stable channel
+Subject: [PATCH 10/24] CopperheadOS uses the stable channel
 
 ---
  components/version_info/channel_android.cc | 2 +-

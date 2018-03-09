@@ -1,7 +1,7 @@
 From 6eabf1e6f394e28a8dc2a9ea1752989c7d94a549 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
-Subject: [PATCH 05/23] disable metrics by default
+Subject: [PATCH 05/24] disable metrics by default
 
 ---
  .../src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java  | 2 +-

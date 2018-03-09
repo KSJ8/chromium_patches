@@ -1,7 +1,7 @@
 From 31215717474202602bba834309ec28783a14ba93 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
-Subject: [PATCH 13/23] use 64-bit Monochrome processes
+Subject: [PATCH 13/24] use 64-bit Monochrome processes
 
 ---
  android_webview/BUILD.gn                           |  2 ++

@@ -1,7 +1,7 @@
 From 97b50e4886c797bcebbbd1b690aecd89d9571b13 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 6 Jan 2017 23:20:08 -0500
-Subject: [PATCH 07/23] disable autofill by default
+Subject: [PATCH 07/24] disable autofill by default
 
 ---
  components/autofill/core/browser/autofill_manager.cc | 2 +-
