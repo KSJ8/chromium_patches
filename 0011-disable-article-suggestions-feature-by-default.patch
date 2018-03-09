@@ -1,7 +1,7 @@
-From 9d052afa536855218d3f84417047c9710341ff93 Mon Sep 17 00:00:00 2001
+From 7877956cb67b76679b32a487d70ee30f4bbb683e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
-Subject: [PATCH 24/24] disable article suggestions feature by default
+Subject: [PATCH 11/24] disable article suggestions feature by default
 
 ---
  components/ntp_snippets/features.cc | 2 +-

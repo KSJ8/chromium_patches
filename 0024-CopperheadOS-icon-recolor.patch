@@ -1,7 +1,7 @@
-From 71342bdddb95e37ea497c22f264fa773263cefb1 Mon Sep 17 00:00:00 2001
+From 9fb51f7fe200a9e67628ee3645e959824eb9059f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 28 Jan 2018 15:57:04 -0500
-Subject: [PATCH 22/24] CopperheadOS icon recolor
+Subject: [PATCH 24/24] CopperheadOS icon recolor
 
 Current incantation of the recolor command:
 

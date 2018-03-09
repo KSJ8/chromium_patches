@@ -1,12 +1,26 @@
-From a0d3b8ea60853e009817412da61afb96defd0f12 Mon Sep 17 00:00:00 2001
+From 55f15347b930a7fee614f30b9e866f7978a4e896 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
 Subject: [PATCH 06/24] disable hyperlink auditing by default
 
 ---
+ chrome/browser/about_flags.cc                   | 2 +-
  chrome/browser/chrome_content_browser_client.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
+index 8174571e71b8..fa8a3342d688 100644
+--- a/chrome/browser/about_flags.cc
++++ b/chrome/browser/about_flags.cc
+@@ -1325,7 +1325,7 @@ const FeatureEntry kFeatureEntries[] = {
+      SINGLE_VALUE_TYPE(switches::kHistoryEntryRequiresUserGesture)},
+     {"disable-hyperlink-auditing", flag_descriptions::kHyperlinkAuditingName,
+      flag_descriptions::kHyperlinkAuditingDescription, kOsAll,
+-     SINGLE_DISABLE_VALUE_TYPE(switches::kNoPings)},
++     SINGLE_VALUE_TYPE(switches::kNoPings)},
+ #if defined(OS_ANDROID)
+     {"contextual-search", flag_descriptions::kContextualSearchName,
+      flag_descriptions::kContextualSearchDescription, kOsAndroid,
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
 index 8d132058b6ee..6332afea5282 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
