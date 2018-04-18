@@ -1,17 +1,17 @@
-From c3c92312a437bd175eb283ad41dc77c3b21e045c Mon Sep 17 00:00:00 2001
+From 02d3ac2cb1f9c38b37035e223ca1c85f574058ce Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
-Subject: [PATCH 19/24] enable -fwrapv in non-UBSan builds for clang
+Subject: [PATCH 18/23] enable -fwrapv in non-UBSan builds for clang
 
 ---
  build/config/compiler/BUILD.gn | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index b20ca6666889..d6e7ce78a576 100644
+index 78c90274c11c..a87289ecc4df 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -261,6 +261,10 @@ config("compiler") {
+@@ -240,6 +240,10 @@ config("compiler") {
          cflags += [ "-fstack-protector-strong" ]
        }
      }
@@ -23,5 +23,5 @@ index b20ca6666889..d6e7ce78a576 100644
  
    # Eliminate build metadata (__DATE__, __TIME__ and __TIMESTAMP__) for
 -- 
-2.16.2
+2.17.0
 

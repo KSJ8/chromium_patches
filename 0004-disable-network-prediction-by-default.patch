@@ -1,7 +1,7 @@
-From b59a40a194e26f07180ede9968e6fd16cad3ab75 Mon Sep 17 00:00:00 2001
+From feff1ed9b289be2b82cb95b9dfbbfdff43c74d8e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
-Subject: [PATCH 04/24] disable network prediction by default
+Subject: [PATCH 04/23] disable network prediction by default
 
 ---
  chrome/browser/net/prediction_options.h | 2 +-
@@ -21,5 +21,5 @@ index 651248390f50..4c55a198b4fe 100644
  
  enum class NetworkPredictionStatus {
 -- 
-2.16.2
+2.17.0
 

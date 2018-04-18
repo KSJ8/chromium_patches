@@ -1,42 +1,24 @@
-From 79bf0a789add3c0590fdbdc07904d293c324d154 Mon Sep 17 00:00:00 2001
+From bf97562676e04e7b6c6269315e2a340b275e117a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
-Subject: [PATCH 10/24] disable showing popular sites by default
+Subject: [PATCH 10/23] disable showing popular sites by default
 
 ---
- components/ntp_tiles/field_trial.cc               | 4 ++--
- testing/variations/fieldtrial_testing_config.json | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ components/ntp_tiles/constants.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/components/ntp_tiles/field_trial.cc b/components/ntp_tiles/field_trial.cc
-index 60ed1b61dc79..576d78a0542e 100644
---- a/components/ntp_tiles/field_trial.cc
-+++ b/components/ntp_tiles/field_trial.cc
-@@ -42,9 +42,9 @@ bool ShouldShowPopularSites() {
-   }
- #endif
+diff --git a/components/ntp_tiles/constants.cc b/components/ntp_tiles/constants.cc
+index 5cec78488ece..a95c8aa735cb 100644
+--- a/components/ntp_tiles/constants.cc
++++ b/components/ntp_tiles/constants.cc
+@@ -20,6 +20,6 @@ const base::Feature kSiteExplorationUiFeature{
+     "SiteExplorationUi", base::FEATURE_DISABLED_BY_DEFAULT};
  
--  // Until any configuration is fetched, the default is to enable popular sites.
-+  // Until any configuration is fetched, the default is to disable popular sites.
-   if (group_name.empty()) {
--    return true;
-+    return false;
-   }
+ const base::Feature kUsePopularSitesSuggestions{
+-    "UsePopularSitesSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
++    "UsePopularSitesSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
  
-   return base::StartsWith(group_name, "Enabled",
-diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index b1997597ef5c..56bfd256c50a 100644
---- a/testing/variations/fieldtrial_testing_config.json
-+++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2022,7 +2022,7 @@
-             ],
-             "experiments": [
-                 {
--                    "name": "EnabledFull"
-+                    "name": "Disabled"
-                 }
-             ]
-         }
+ }  // namespace ntp_tiles
 -- 
-2.16.2
+2.17.0
 

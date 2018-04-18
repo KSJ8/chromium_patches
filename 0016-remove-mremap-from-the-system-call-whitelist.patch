@@ -1,18 +1,18 @@
-From f55ea45cb0e67d38a8026ee7c4a4fa6b67582ff3 Mon Sep 17 00:00:00 2001
+From a71801b99652308b30fe20e9e695476dd85cb669 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
-Subject: [PATCH 17/24] remove mremap from the system call whitelist
+Subject: [PATCH 16/23] remove mremap from the system call whitelist
 
 ---
- sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc             | 1 -
- services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc           | 1 -
- .../service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc     | 1 -
- services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc      | 1 -
- services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc       | 1 -
+ sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc     | 1 -
+ services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc   | 1 -
+ .../sandbox/linux/bpf_pdf_compositor_policy_linux.cc             | 1 -
+ .../service_manager/sandbox/linux/bpf_renderer_policy_linux.cc   | 1 -
+ .../service_manager/sandbox/linux/bpf_utility_policy_linux.cc    | 1 -
  5 files changed, 5 deletions(-)
 
 diff --git a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
-index 9a37225780b0..df414a6103ec 100644
+index f0b658d4b63b..af8ac8df8243 100644
 --- a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
 +++ b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
 @@ -92,7 +92,6 @@ ResultExpr BaselinePolicyAndroid::EvaluateSyscall(int sysno) const {
@@ -72,5 +72,5 @@ index 1b2c0fda4c2d..57b0f31fb91e 100644
      case __NR_pwrite64:
      case __NR_sysinfo:
 -- 
-2.16.2
+2.17.0
 

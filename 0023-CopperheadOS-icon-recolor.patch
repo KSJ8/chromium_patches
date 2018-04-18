@@ -1,39 +1,39 @@
-From 9fb51f7fe200a9e67628ee3645e959824eb9059f Mon Sep 17 00:00:00 2001
+From 581f9c4eb97647238779b03b437eecc59af806f4 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 28 Jan 2018 15:57:04 -0500
-Subject: [PATCH 24/24] CopperheadOS icon recolor
+Subject: [PATCH 23/23] CopperheadOS icon recolor
 
 Current incantation of the recolor command:
 
     find -iname '*.png' -exec gm convert {} -colorspace Gray -gamma 0.5 {} \;
 ---
- chrome/android/BUILD.gn                                 |   4 ++--
- .../drawable-hdpi/fre_product_logo.png                  | Bin 0 -> 11327 bytes
- .../drawable-hdpi/product_logo_name.png                 | Bin 0 -> 1998 bytes
- .../drawable-mdpi/fre_product_logo.png                  | Bin 0 -> 6794 bytes
- .../drawable-mdpi/product_logo_name.png                 | Bin 0 -> 1200 bytes
- .../drawable-xhdpi/fre_product_logo.png                 | Bin 0 -> 16100 bytes
- .../drawable-xhdpi/product_logo_name.png                | Bin 0 -> 2609 bytes
- .../drawable-xxhdpi/fre_product_logo.png                | Bin 0 -> 26693 bytes
- .../drawable-xxhdpi/product_logo_name.png               | Bin 0 -> 4270 bytes
- .../drawable-xxxhdpi/fre_product_logo.png               | Bin 0 -> 39011 bytes
- .../drawable-xxxhdpi/product_logo_name.png              | Bin 0 -> 5925 bytes
- .../res_chromium_copperheados/mipmap-hdpi/app_icon.png  | Bin 0 -> 2578 bytes
- .../mipmap-hdpi/app_shortcut_icon.png                   | Bin 0 -> 2574 bytes
- .../mipmap-hdpi/app_single_page_icon.png                | Bin 0 -> 1496 bytes
- .../res_chromium_copperheados/mipmap-mdpi/app_icon.png  | Bin 0 -> 1532 bytes
- .../mipmap-mdpi/app_shortcut_icon.png                   | Bin 0 -> 1534 bytes
- .../mipmap-mdpi/app_single_page_icon.png                | Bin 0 -> 1206 bytes
- .../res_chromium_copperheados/mipmap-xhdpi/app_icon.png | Bin 0 -> 3727 bytes
- .../mipmap-xhdpi/app_shortcut_icon.png                  | Bin 0 -> 3664 bytes
- .../mipmap-xhdpi/app_single_page_icon.png               | Bin 0 -> 2639 bytes
- .../mipmap-xxhdpi/app_icon.png                          | Bin 0 -> 6160 bytes
- .../mipmap-xxhdpi/app_shortcut_icon.png                 | Bin 0 -> 6046 bytes
- .../mipmap-xxhdpi/app_single_page_icon.png              | Bin 0 -> 3485 bytes
- .../mipmap-xxxhdpi/app_icon.png                         | Bin 0 -> 9104 bytes
- .../mipmap-xxxhdpi/app_shortcut_icon.png                | Bin 0 -> 8910 bytes
- .../mipmap-xxxhdpi/app_single_page_icon.png             | Bin 0 -> 6162 bytes
- .../values/channel_constants.xml                        |  11 +++++++++++
+ chrome/android/BUILD.gn                         |   4 ++--
+ .../drawable-hdpi/fre_product_logo.png          | Bin 0 -> 11327 bytes
+ .../drawable-hdpi/product_logo_name.png         | Bin 0 -> 1998 bytes
+ .../drawable-mdpi/fre_product_logo.png          | Bin 0 -> 6794 bytes
+ .../drawable-mdpi/product_logo_name.png         | Bin 0 -> 1200 bytes
+ .../drawable-xhdpi/fre_product_logo.png         | Bin 0 -> 16100 bytes
+ .../drawable-xhdpi/product_logo_name.png        | Bin 0 -> 2609 bytes
+ .../drawable-xxhdpi/fre_product_logo.png        | Bin 0 -> 26693 bytes
+ .../drawable-xxhdpi/product_logo_name.png       | Bin 0 -> 4270 bytes
+ .../drawable-xxxhdpi/fre_product_logo.png       | Bin 0 -> 39011 bytes
+ .../drawable-xxxhdpi/product_logo_name.png      | Bin 0 -> 5925 bytes
+ .../mipmap-hdpi/app_icon.png                    | Bin 0 -> 2578 bytes
+ .../mipmap-hdpi/app_shortcut_icon.png           | Bin 0 -> 2574 bytes
+ .../mipmap-hdpi/app_single_page_icon.png        | Bin 0 -> 1496 bytes
+ .../mipmap-mdpi/app_icon.png                    | Bin 0 -> 1532 bytes
+ .../mipmap-mdpi/app_shortcut_icon.png           | Bin 0 -> 1534 bytes
+ .../mipmap-mdpi/app_single_page_icon.png        | Bin 0 -> 1206 bytes
+ .../mipmap-xhdpi/app_icon.png                   | Bin 0 -> 3727 bytes
+ .../mipmap-xhdpi/app_shortcut_icon.png          | Bin 0 -> 3664 bytes
+ .../mipmap-xhdpi/app_single_page_icon.png       | Bin 0 -> 2639 bytes
+ .../mipmap-xxhdpi/app_icon.png                  | Bin 0 -> 6160 bytes
+ .../mipmap-xxhdpi/app_shortcut_icon.png         | Bin 0 -> 6046 bytes
+ .../mipmap-xxhdpi/app_single_page_icon.png      | Bin 0 -> 3485 bytes
+ .../mipmap-xxxhdpi/app_icon.png                 | Bin 0 -> 9104 bytes
+ .../mipmap-xxxhdpi/app_shortcut_icon.png        | Bin 0 -> 8910 bytes
+ .../mipmap-xxxhdpi/app_single_page_icon.png     | Bin 0 -> 6162 bytes
+ .../values/channel_constants.xml                |  11 +++++++++++
  27 files changed, 13 insertions(+), 2 deletions(-)
  create mode 100644 chrome/android/java/res_chromium_copperheados/drawable-hdpi/fre_product_logo.png
  create mode 100644 chrome/android/java/res_chromium_copperheados/drawable-hdpi/product_logo_name.png
@@ -63,7 +63,7 @@ Current incantation of the recolor command:
  create mode 100644 chrome/android/java/res_chromium_copperheados/values/channel_constants.xml
 
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index a6dc220506bd..df123fdd4d3c 100644
+index e97cf93488b8..d9078d9c52b9 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
 @@ -89,7 +89,7 @@ jinja_template("chrome_sync_shell_android_manifest") {
@@ -73,9 +73,9 @@ index a6dc220506bd..df123fdd4d3c 100644
 -    "//chrome/android/java/res_chromium",
 +    "//chrome/android/java/res_chromium_copperheados",
    ]
-   deps = [
-     ":chrome_strings_grd",
-@@ -672,7 +672,7 @@ if (enable_vr) {
+   if (enable_vr) {
+     resource_dirs += [ "//chrome/android/java/res_vr" ]
+@@ -680,7 +680,7 @@ if (enable_vr) {
  
  # Overrides icon / name defined in chrome_java_resources.
  android_resources("chrome_public_apk_resources") {
@@ -3742,5 +3742,5 @@ index 000000000000..b7b3bfc29641
 +    <string name="search_widget_title" translatable="false">Chromium search</string>
 +</resources>
 -- 
-2.16.2
+2.17.0
 
