@@ -1,4 +1,4 @@
-From f7647556922770eeb73be582836305db1043d9d5 Mon Sep 17 00:00:00 2001
+From 2b9b57345b497d7b2fceba4b562abe88cdfe3562 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
 Subject: [PATCH 13/23] use 64-bit WebView processes
