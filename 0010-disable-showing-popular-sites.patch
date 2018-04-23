@@ -1,0 +1,68 @@
+From 9262da7824d6c138a5e1282c599cc13b3e8fcb63 Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Tue, 6 Mar 2018 00:27:41 -0500
+Subject: [PATCH 10/23] disable showing popular sites
+
+---
+ components/ntp_tiles/constants.cc              |  4 ++--
+ .../variations/fieldtrial_testing_config.json  | 18 ------------------
+ 2 files changed, 2 insertions(+), 20 deletions(-)
+
+diff --git a/components/ntp_tiles/constants.cc b/components/ntp_tiles/constants.cc
+index 5cec78488ece..4c1c73d90f5c 100644
+--- a/components/ntp_tiles/constants.cc
++++ b/components/ntp_tiles/constants.cc
+@@ -11,7 +11,7 @@ namespace ntp_tiles {
+ const char kPopularSitesFieldTrialName[] = "NTPPopularSites";
+ 
+ const base::Feature kPopularSitesBakedInContentFeature{
+-    "NTPPopularSitesBakedInContent", base::FEATURE_ENABLED_BY_DEFAULT};
++    "NTPPopularSitesBakedInContent", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ const base::Feature kNtpMostLikelyFaviconsFromServerFeature{
+     "NTPMostLikelyFaviconsFromServer", base::FEATURE_ENABLED_BY_DEFAULT};
+@@ -20,6 +20,6 @@ const base::Feature kSiteExplorationUiFeature{
+     "SiteExplorationUi", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ const base::Feature kUsePopularSitesSuggestions{
+-    "UsePopularSitesSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
++    "UsePopularSitesSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ }  // namespace ntp_tiles
+diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
+index 1e0f5492747a..62d2e182c6a3 100644
+--- a/testing/variations/fieldtrial_testing_config.json
++++ b/testing/variations/fieldtrial_testing_config.json
+@@ -2108,29 +2108,11 @@
+                 "ios"
+             ],
+             "experiments": [
+-                {
+-                    "name": "Enabled",
+-                    "enable_features": [
+-                        "UsePopularSitesSuggestions"
+-                    ]
+-                },
+                 {
+                     "name": "Disabled",
+                     "disable_features": [
+                         "UsePopularSitesSuggestions"
+                     ]
+-                },
+-                {
+-                    "name": "EnabledShortNamesHoldbackControl",
+-                    "params": {
+-                        "version": "5_shortname"
+-                    }
+-                },
+-                {
+-                    "name": "EnabledShortNamesHoldback",
+-                    "params": {
+-                        "version": "5_shortname-control"
+-                    }
+                 }
+             ]
+         }
+-- 
+2.17.0
+
