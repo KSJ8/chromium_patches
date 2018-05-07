@@ -1,4 +1,4 @@
-From e43fb94cba9626ef026cb9d3f2626e8dc1db9496 Mon Sep 17 00:00:00 2001
+From 489c9eda44ebfebd8e978ba46cf21d9fe088fdd0 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 09:26:51 -0500
 Subject: [PATCH 03/23] disable contextual search by default

@@ -1,4 +1,4 @@
-From 2c997a5543b1e7aefdb575313285aa2dfbb90e78 Mon Sep 17 00:00:00 2001
+From 86de1af23f17d371c14ad90de3daaaa640802e7e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
 Subject: [PATCH 08/23] disable first run welcome page

@@ -1,4 +1,4 @@
-From 9262da7824d6c138a5e1282c599cc13b3e8fcb63 Mon Sep 17 00:00:00 2001
+From 5aff872789da505b580b2adced37f05523022c67 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/23] disable showing popular sites
