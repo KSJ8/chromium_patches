@@ -1,4 +1,4 @@
-From 2159b08b49015932d66405bddc8d49b316983393 Mon Sep 17 00:00:00 2001
+From 4292f707e5e35056051c5e8c080a1b50a6d85e96 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 20/23] stop enabling search engine geolocation by default

@@ -1,11 +1,12 @@
-From fc61c20e5180726b1b7099aa82659d424b57a85d Mon Sep 17 00:00:00 2001
+From 4913394f9b0200bb3fd42df3eadb7ab2828dc586 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 15/23] mark non-secure origins as non-secure
 
 ---
  components/security_state/core/security_state.cc | 16 +---------------
- 1 file changed, 1 insertion(+), 15 deletions(-)
+ .../variations/fieldtrial_testing_config.json    |  4 ++--
+ 2 files changed, 3 insertions(+), 17 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
 index 54531e28f4a9..b7369adaf30b 100644
@@ -34,6 +35,22 @@ index 54531e28f4a9..b7369adaf30b 100644
  }
  
  ContentStatus GetContentStatus(bool displayed, bool ran) {
+diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
+index 62d2e182c6a3..b878232f43f0 100644
+--- a/testing/variations/fieldtrial_testing_config.json
++++ b/testing/variations/fieldtrial_testing_config.json
+@@ -1612,9 +1612,9 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "NotSecureWarning",
++                    "name": "NotSecureDangerous",
+                     "params": {
+-                        "treatment": "warning"
++                        "treatment": "dangerous"
+                     },
+                     "enable_features": [
+                         "MarkHttpAs"
 -- 
 2.17.0
 
