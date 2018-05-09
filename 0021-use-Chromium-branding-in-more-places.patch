@@ -1,4 +1,4 @@
-From b35434a5138187685d7bb2c5e1af9d5ef8fa8107 Mon Sep 17 00:00:00 2001
+From d21d9508f060eea4784618c14e2b62f912725bfb Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 6 Aug 2017 12:45:14 -0400
 Subject: [PATCH 21/23] use Chromium branding in more places

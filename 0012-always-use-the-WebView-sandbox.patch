@@ -1,4 +1,4 @@
-From 7ec985a7b59e6818795991ea4193b83f4e8950d8 Mon Sep 17 00:00:00 2001
+From df3359f8e51ee74642e491d2f0bd3c5fad0c1db8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
 Subject: [PATCH 12/23] always use the WebView sandbox
