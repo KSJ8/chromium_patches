@@ -1,0 +1,14 @@
+target_os = "android"
+target_cpu = "arm64"
+is_debug = false
+
+is_official_build = true
+is_component_build = false
+symbol_level = 0
+
+ffmpeg_branding = "Chrome"
+proprietary_codecs = true
+
+android_channel = "stable"
+android_default_version_name = "66.0.3359.158"
+android_default_version_code = "335915852"
