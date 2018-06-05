@@ -1,4 +1,4 @@
-From 09f8a57b34c535356a87b1e45d067bfb4d748dd0 Mon Sep 17 00:00:00 2001
+From 7581376191c2e02bb184e9a8dc313abeeed3b9a4 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 15/23] mark non-secure origins as non-secure
@@ -36,10 +36,10 @@ index 54531e28f4a9..b7369adaf30b 100644
  
  ContentStatus GetContentStatus(bool displayed, bool ran) {
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 62d2e182c6a3..b878232f43f0 100644
+index 1bcf45f9e14e..9bdb37108f79 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -1612,9 +1612,9 @@
+@@ -1466,9 +1466,9 @@
              ],
              "experiments": [
                  {
@@ -52,5 +52,5 @@ index 62d2e182c6a3..b878232f43f0 100644
                      "enable_features": [
                          "MarkHttpAs"
 -- 
-2.17.0
+2.17.1
 

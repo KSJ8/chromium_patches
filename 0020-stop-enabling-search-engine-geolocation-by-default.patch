@@ -1,4 +1,4 @@
-From 68164099f670385af04753a9f7932bbcf9132bbd Mon Sep 17 00:00:00 2001
+From f6cd591c2ca0437edd0f63f8f5e9005e6e36e423 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
 Subject: [PATCH 20/23] stop enabling search engine geolocation by default
@@ -65,5 +65,5 @@ index c8ba805c6655..6dda366faf69 100644
  
      // Update the content setting with the auto-grants for the DSE.
 -- 
-2.17.0
+2.17.1
 

@@ -1,4 +1,4 @@
-From 919b5019c31b680f93144192aa2fe3f4950901c6 Mon Sep 17 00:00:00 2001
+From 7eed84b122036cdf3fd2f5fec71d319064fba818 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 11:16:11 -0400
 Subject: [PATCH 01/23] enable dubious Do Not Track feature by default
@@ -8,10 +8,10 @@ Subject: [PATCH 01/23] enable dubious Do Not Track feature by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/ui/browser_ui_prefs.cc b/chrome/browser/ui/browser_ui_prefs.cc
-index e9f33ea19f34..aafc82168cdb 100644
+index ca2068de96cd..e27bd182542b 100644
 --- a/chrome/browser/ui/browser_ui_prefs.cc
 +++ b/chrome/browser/ui/browser_ui_prefs.cc
-@@ -76,7 +76,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -81,7 +81,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterDictionaryPref(prefs::kAppWindowPlacement);
    registry->RegisterBooleanPref(
        prefs::kEnableDoNotTrack,
@@ -21,5 +21,5 @@ index e9f33ea19f34..aafc82168cdb 100644
  #if !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
    registry->RegisterBooleanPref(prefs::kPrintPreviewUseSystemDefaultPrinter,
 -- 
-2.17.0
+2.17.1
 

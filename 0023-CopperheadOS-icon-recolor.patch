@@ -1,4 +1,4 @@
-From 1cf1608014ea4d53f3d429d948d95d57a001a358 Mon Sep 17 00:00:00 2001
+From 4b69885249954f91c85bb0d3a59e95628e76b763 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 28 Jan 2018 15:57:04 -0500
 Subject: [PATCH 23/23] CopperheadOS icon recolor
@@ -63,10 +63,10 @@ Current incantation of the recolor command:
  create mode 100644 chrome/android/java/res_chromium_copperheados/values/channel_constants.xml
 
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index e97cf93488b8..d9078d9c52b9 100644
+index afc523da4bf2..998886ec767d 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -89,7 +89,7 @@ jinja_template("chrome_sync_shell_android_manifest") {
+@@ -93,7 +93,7 @@ jinja_template("chrome_sync_shell_android_manifest") {
  android_resources("chrome_java_resources") {
    resource_dirs = [
      "java/res",
@@ -75,7 +75,7 @@ index e97cf93488b8..d9078d9c52b9 100644
    ]
    if (enable_vr) {
      resource_dirs += [ "//chrome/android/java/res_vr" ]
-@@ -680,7 +680,7 @@ if (enable_vr) {
+@@ -713,7 +713,7 @@ if (enable_vr) {
  
  # Overrides icon / name defined in chrome_java_resources.
  android_resources("chrome_public_apk_resources") {
@@ -3742,5 +3742,5 @@ index 000000000000..b7b3bfc29641
 +    <string name="search_widget_title" translatable="false">Chromium search</string>
 +</resources>
 -- 
-2.17.0
+2.17.1
 

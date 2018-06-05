@@ -1,4 +1,4 @@
-From 2555c35cd34b069b4f6be781a5a9af4a957eb8b0 Mon Sep 17 00:00:00 2001
+From d3f78f5799e63daa68e0b24fd25cec5d12faa832 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 07:29:13 -0500
 Subject: [PATCH 17/23] switch to -fstack-protector-strong
@@ -8,13 +8,13 @@ Subject: [PATCH 17/23] switch to -fstack-protector-strong
  1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index 9a10137aa405..78c90274c11c 100644
+index 461e62da2d50..8300e4766d9d 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -232,16 +232,12 @@ config("compiler") {
+@@ -254,16 +254,12 @@ config("compiler") {
          cflags += [ "-fstack-protector" ]
        }
-     } else if (is_posix && !is_chromeos && !is_nacl) {
+     } else if ((is_posix && !is_chromeos && !is_nacl) || is_fuchsia) {
 -      # TODO(phajdan.jr): Use -fstack-protector-strong when our gcc supports it.
 -      # See also https://crbug.com/533294
 -      cflags += [ "--param=ssp-buffer-size=4" ]
@@ -28,7 +28,7 @@ index 9a10137aa405..78c90274c11c 100644
 +        cflags += [ "-fstack-protector-strong" ]
        }
      }
-   }
+   } else {
 -- 
-2.17.0
+2.17.1
 

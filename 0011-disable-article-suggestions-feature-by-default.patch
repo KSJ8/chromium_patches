@@ -1,4 +1,4 @@
-From eb4dbfe59a8adc99b3112f5ce752171d7e2908be Mon Sep 17 00:00:00 2001
+From 06a871299f12964ee6ac84344e6724cced1a907a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH 11/23] disable article suggestions feature by default
@@ -21,5 +21,5 @@ index af71fdc7e656..a121e5b39353 100644
  const base::Feature kBookmarkSuggestionsFeature{
      "NTPBookmarkSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
 -- 
-2.17.0
+2.17.1
 

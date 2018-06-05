@@ -1,4 +1,4 @@
-From 06c04b7cca862a029eed9019073394d13241aa3a Mon Sep 17 00:00:00 2001
+From fc955017401c85bd8daceabf08ef15d2ee1bdce8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/23] disable showing popular sites
@@ -30,10 +30,10 @@ index 5cec78488ece..4c1c73d90f5c 100644
  
  }  // namespace ntp_tiles
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 1e0f5492747a..62d2e182c6a3 100644
+index b0a0e087ff65..1bcf45f9e14e 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2108,29 +2108,11 @@
+@@ -1993,29 +1993,11 @@
                  "ios"
              ],
              "experiments": [
@@ -64,5 +64,5 @@ index 1e0f5492747a..62d2e182c6a3 100644
              ]
          }
 -- 
-2.17.0
+2.17.1
 
