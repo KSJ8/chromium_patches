@@ -1,14 +1,14 @@
-From d3f78f5799e63daa68e0b24fd25cec5d12faa832 Mon Sep 17 00:00:00 2001
+From 4073d4c095bf5b81ded49ae0cc5d9fefb2a1657a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 07:29:13 -0500
-Subject: [PATCH 17/23] switch to -fstack-protector-strong
+Subject: [PATCH 17/22] switch to -fstack-protector-strong
 
 ---
  build/config/compiler/BUILD.gn | 6 +-----
  1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index 461e62da2d50..8300e4766d9d 100644
+index 461e62d..8300e476 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
 @@ -254,16 +254,12 @@ config("compiler") {
@@ -30,5 +30,5 @@ index 461e62da2d50..8300e4766d9d 100644
      }
    } else {
 -- 
-2.17.1
+2.7.4
 

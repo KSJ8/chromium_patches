@@ -1,7 +1,7 @@
-From 02eb531ae4891acf90458fb9872072a579059612 Mon Sep 17 00:00:00 2001
+From 102933823526968a3154b97d511b9bc0a2175045 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
-Subject: [PATCH 06/23] disable hyperlink auditing by default
+Subject: [PATCH 06/22] disable hyperlink auditing by default
 
 ---
  chrome/browser/about_flags.cc                   | 2 +-
@@ -9,7 +9,7 @@ Subject: [PATCH 06/23] disable hyperlink auditing by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 91ca2428ee9f..7efd89e2bb9b 100644
+index 91ca242..7efd89e 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
 @@ -1333,7 +1333,7 @@ const FeatureEntry kFeatureEntries[] = {
@@ -22,7 +22,7 @@ index 91ca2428ee9f..7efd89e2bb9b 100644
      {"contextual-search", flag_descriptions::kContextualSearchName,
       flag_descriptions::kContextualSearchDescription, kOsAndroid,
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
-index 196205f32d14..504978b94d6e 100644
+index 196205f..504978b 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
 +++ b/chrome/browser/chrome_content_browser_client.cc
 @@ -990,7 +990,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePrefs(
@@ -35,5 +35,5 @@ index 196205f32d14..504978b94d6e 100644
    // Register user prefs for mapping SitePerProcess and IsolateOrigins in
    // user policy in addition to the same named ones in Local State (which are
 -- 
-2.17.1
+2.7.4
 

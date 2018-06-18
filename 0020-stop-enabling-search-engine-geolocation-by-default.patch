@@ -1,14 +1,14 @@
-From f6cd591c2ca0437edd0f63f8f5e9005e6e36e423 Mon Sep 17 00:00:00 2001
+From fcd9c87794af41a989e4a56497bf154a85dbb6ee Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
-Subject: [PATCH 20/23] stop enabling search engine geolocation by default
+Subject: [PATCH 20/22] stop enabling search engine geolocation by default
 
 ---
- .../search_permissions_service.cc              | 18 ++++--------------
+ .../search_permissions/search_permissions_service.cc   | 18 ++++--------------
  1 file changed, 4 insertions(+), 14 deletions(-)
 
 diff --git a/chrome/browser/android/search_permissions/search_permissions_service.cc b/chrome/browser/android/search_permissions/search_permissions_service.cc
-index c8ba805c6655..6dda366faf69 100644
+index c8ba805..6dda366 100644
 --- a/chrome/browser/android/search_permissions/search_permissions_service.cc
 +++ b/chrome/browser/android/search_permissions/search_permissions_service.cc
 @@ -196,7 +196,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
@@ -65,5 +65,5 @@ index c8ba805c6655..6dda366faf69 100644
  
      // Update the content setting with the auto-grants for the DSE.
 -- 
-2.17.1
+2.7.4
 

@@ -1,15 +1,15 @@
-From 7581376191c2e02bb184e9a8dc313abeeed3b9a4 Mon Sep 17 00:00:00 2001
+From 30502fe53f917fb5cca56b2a5b5cafd2d1730b48 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
-Subject: [PATCH 15/23] mark non-secure origins as non-secure
+Subject: [PATCH 15/22] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 16 +---------------
- .../variations/fieldtrial_testing_config.json    |  4 ++--
+ components/security_state/core/security_state.cc  | 16 +---------------
+ testing/variations/fieldtrial_testing_config.json |  4 ++--
  2 files changed, 3 insertions(+), 17 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index 54531e28f4a9..b7369adaf30b 100644
+index 54531e2..b7369ad 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
 @@ -65,21 +65,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
@@ -36,7 +36,7 @@ index 54531e28f4a9..b7369adaf30b 100644
  
  ContentStatus GetContentStatus(bool displayed, bool ran) {
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 1bcf45f9e14e..9bdb37108f79 100644
+index 1bcf45f..9bdb3710 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
 @@ -1466,9 +1466,9 @@
@@ -52,5 +52,5 @@ index 1bcf45f9e14e..9bdb37108f79 100644
                      "enable_features": [
                          "MarkHttpAs"
 -- 
-2.17.1
+2.7.4
 
