@@ -1,16 +1,16 @@
-From 5b1d7267f2ebec48e766cc40cb7cd79c136d8764 Mon Sep 17 00:00:00 2001
+From eb3c01c48ffa6fd3991944d1deda752a922799bd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 19/22] add DuckDuckGo as the default search engine
 
 ---
- .../search_engines/prepopulated_engines.json       |  12 +-
- components/search_engines/search_engine_type.h     |   1 +
- .../template_url_prepopulate_data.cc               | 218 ++++++++++-----------
+ .../search_engines/prepopulated_engines.json  |  12 +-
+ .../search_engines/search_engine_type.h       |   1 +
+ .../template_url_prepopulate_data.cc          | 218 +++++++++---------
  3 files changed, 121 insertions(+), 110 deletions(-)
 
 diff --git a/components/search_engines/prepopulated_engines.json b/components/search_engines/prepopulated_engines.json
-index b575eb8..5d97208 100644
+index 535692d44a78..cfa986b3b659 100644
 --- a/components/search_engines/prepopulated_engines.json
 +++ b/components/search_engines/prepopulated_engines.json
 @@ -10,7 +10,7 @@
@@ -22,7 +22,7 @@ index b575eb8..5d97208 100644
  //    91+
  //
  // IDs > 1000 are reserved for distribution custom engines.
-@@ -114,6 +114,16 @@
+@@ -119,6 +119,16 @@
        "id": 68
      },
  
@@ -40,7 +40,7 @@ index b575eb8..5d97208 100644
        "name": "Google",
        "keyword": "google.com",
 diff --git a/components/search_engines/search_engine_type.h b/components/search_engines/search_engine_type.h
-index c19dd0e..02f6b16 100644
+index c19dd0e91cf9..02f6b1612621 100644
 --- a/components/search_engines/search_engine_type.h
 +++ b/components/search_engines/search_engine_type.h
 @@ -63,6 +63,7 @@ enum SearchEngineType {
@@ -52,7 +52,7 @@ index c19dd0e..02f6b16 100644
  };
  
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 0c686f6..d287c4f0 100644
+index 81e9948af2da..df034696acc0 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
 @@ -51,548 +51,548 @@ namespace {
@@ -714,5 +714,5 @@ index 0c686f6..d287c4f0 100644
      &yahoo, &yahoo_ar, &yahoo_at, &yahoo_au, &yahoo_br, &yahoo_ca, &yahoo_ch,
      &yahoo_cl, &yahoo_co, &yahoo_de, &yahoo_dk, &yahoo_es, &yahoo_fi, &yahoo_fr,
 -- 
-2.7.4
+2.19.1
 

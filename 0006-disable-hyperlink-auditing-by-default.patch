@@ -1,4 +1,4 @@
-From 102933823526968a3154b97d511b9bc0a2175045 Mon Sep 17 00:00:00 2001
+From ee61eede1688354a0017f6fd8384e51497d0a235 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
 Subject: [PATCH 06/22] disable hyperlink auditing by default
@@ -9,10 +9,10 @@ Subject: [PATCH 06/22] disable hyperlink auditing by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 91ca242..7efd89e 100644
+index 114581b1adfc..d6046b7ea013 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -1333,7 +1333,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1481,7 +1481,7 @@ const FeatureEntry kFeatureEntries[] = {
       SINGLE_VALUE_TYPE(switches::kDisablePushStateThrottle)},
      {"disable-hyperlink-auditing", flag_descriptions::kHyperlinkAuditingName,
       flag_descriptions::kHyperlinkAuditingDescription, kOsAll,
@@ -22,10 +22,10 @@ index 91ca242..7efd89e 100644
      {"contextual-search", flag_descriptions::kContextualSearchName,
       flag_descriptions::kContextualSearchDescription, kOsAndroid,
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
-index 196205f..504978b 100644
+index 98dd32625265..5f872d552061 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
 +++ b/chrome/browser/chrome_content_browser_client.cc
-@@ -990,7 +990,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePrefs(
+@@ -1041,7 +1041,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePrefs(
  void ChromeContentBrowserClient::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterBooleanPref(prefs::kDisable3DAPIs, false);
@@ -35,5 +35,5 @@ index 196205f..504978b 100644
    // Register user prefs for mapping SitePerProcess and IsolateOrigins in
    // user policy in addition to the same named ones in Local State (which are
 -- 
-2.7.4
+2.19.1
 

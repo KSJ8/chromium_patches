@@ -1,25 +1,38 @@
-From 3e16011e011ad9af85cefb5520550d97b154234b Mon Sep 17 00:00:00 2001
-From: Daniel Micay <danielmicay@gmail.com>
-Date: Fri, 6 Jan 2017 23:20:08 -0500
+From 8445842b3e84c041caad873baa6d8e8737f7a9fa Mon Sep 17 00:00:00 2001
+From: Spotlight <spotlight@joscomputing.space>
+Date: Sat, 28 Jul 2018 18:47:32 -0500
 Subject: [PATCH 07/22] disable autofill by default
 
 ---
- components/autofill/core/browser/autofill_manager.cc | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ components/autofill/core/common/autofill_prefs.cc | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/components/autofill/core/browser/autofill_manager.cc b/components/autofill/core/browser/autofill_manager.cc
-index 5bec63c..f4f34e7 100644
---- a/components/autofill/core/browser/autofill_manager.cc
-+++ b/components/autofill/core/browser/autofill_manager.cc
-@@ -227,7 +227,7 @@ void AutofillManager::RegisterProfilePrefs(
-   registry->RegisterIntegerPref(
-       prefs::kAutofillCreditCardSigninPromoImpressionCount, 0);
+diff --git a/components/autofill/core/common/autofill_prefs.cc b/components/autofill/core/common/autofill_prefs.cc
+index 5b9c0dcf69d0..bc3aa0fccadf 100644
+--- a/components/autofill/core/common/autofill_prefs.cc
++++ b/components/autofill/core/common/autofill_prefs.cc
+@@ -75,10 +75,10 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+       prefs::kAutofillBillingCustomerNumber, 0.0,
+       user_prefs::PrefRegistrySyncable::SYNCABLE_PRIORITY_PREF);
    registry->RegisterBooleanPref(
--      prefs::kAutofillEnabled, true,
-+      prefs::kAutofillEnabled, false,
+-      prefs::kAutofillEnabledDeprecated, true,
++      prefs::kAutofillEnabledDeprecated, false,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(
-       prefs::kAutofillProfileUseDatesFixed, false,
+-      prefs::kAutofillProfileEnabled, true,
++      prefs::kAutofillProfileEnabled, false,
+       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+   registry->RegisterIntegerPref(
+       prefs::kAutofillLastVersionDeduped, 0,
+@@ -87,7 +87,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+       prefs::kAutofillLastVersionDisusedAddressesDeleted, 0,
+       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+   registry->RegisterBooleanPref(
+-      prefs::kAutofillCreditCardEnabled, true,
++      prefs::kAutofillCreditCardEnabled, false,
+       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+   registry->RegisterStringPref(
+       prefs::kAutofillProfileValidity, "",
 -- 
-2.7.4
+2.19.1
 

@@ -1,18 +1,18 @@
-From 276f6e4120a562bf39dfe2afaafb004f4f09e8e4 Mon Sep 17 00:00:00 2001
+From 4e7af969c61f4910fdb45a9dcdc9301f88bb446d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 5 Jul 2017 00:22:37 -0400
 Subject: [PATCH 14/22] use 64-bit Monochrome processes
 
 ---
- android_webview/BUILD.gn                           |  2 ++
- chrome/android/BUILD.gn                            | 22 ++++++----------------
- chrome/android/chrome_public_apk_tmpl.gni          |  8 +-------
- chrome/android/java/AndroidManifest_monochrome.xml |  1 -
- ...monochrome_android_manifest_jinja_variables.gni |  1 -
+ android_webview/BUILD.gn                      |  2 ++
+ chrome/android/BUILD.gn                       | 22 +++++--------------
+ chrome/android/chrome_public_apk_tmpl.gni     |  8 +------
+ .../java/AndroidManifest_monochrome.xml       |  1 -
+ ...hrome_android_manifest_jinja_variables.gni |  1 -
  5 files changed, 9 insertions(+), 25 deletions(-)
 
 diff --git a/android_webview/BUILD.gn b/android_webview/BUILD.gn
-index 97dd72d..8e9fb13 100644
+index 25b7ec95e25d..77f8d1babb1d 100644
 --- a/android_webview/BUILD.gn
 +++ b/android_webview/BUILD.gn
 @@ -414,7 +414,9 @@ if (android_64bit_target_cpu) {
@@ -26,10 +26,10 @@ index 97dd72d..8e9fb13 100644
      deps = [
        ":webview_entry_point",
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index 89f8120..afc523d 100644
+index c4b0a3a6dacb..29656a711c13 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -894,13 +894,7 @@ if (current_toolchain == default_toolchain) {
+@@ -1027,13 +1027,7 @@ if (current_toolchain == default_toolchain) {
  
    if (enable_resource_whitelist_generation) {
      generate_resource_whitelist("monochrome_resource_whitelist") {
@@ -44,7 +44,7 @@ index 89f8120..afc523d 100644
        deps = [
          ":monochrome($_fat_lib_toolchain)",
        ]
-@@ -1015,14 +1009,8 @@ if (current_toolchain == default_toolchain) {
+@@ -1151,14 +1145,8 @@ if (current_toolchain == default_toolchain) {
    }
  }  # current_toolchain == host_toolchain
  
@@ -59,8 +59,8 @@ index 89f8120..afc523d 100644
 +    current_toolchain != android_secondary_abi_toolchain) {
    shared_library("monochrome") {
      sources = [
-       "../app/android/chrome_main_delegate_android_initializer.cc",
-@@ -1061,10 +1049,12 @@ if (!android_64bit_target_cpu ||
+       "../browser/android/monochrome_entry_point.cc",
+@@ -1188,10 +1176,12 @@ if (!android_64bit_target_cpu ||
      public_configs = extra_chrome_shared_library_configs
      deps += extra_chrome_shared_library_deps
    }
@@ -76,13 +76,13 @@ index 89f8120..afc523d 100644
    }
  }
 diff --git a/chrome/android/chrome_public_apk_tmpl.gni b/chrome/android/chrome_public_apk_tmpl.gni
-index f36d654..8b83c98 100644
+index e3512045fdb9..4437e58b17d8 100644
 --- a/chrome/android/chrome_public_apk_tmpl.gni
 +++ b/chrome/android/chrome_public_apk_tmpl.gni
-@@ -127,13 +127,7 @@ template("chrome_public_apk_tmpl") {
- 
- template("monochrome_public_apk_tmpl") {
-   chrome_public_apk_tmpl(target_name) {
+@@ -194,13 +194,7 @@ template("monochrome_public_common_apk_or_module_tmpl") {
+     _enable_multidex = is_java_debug || multidex_in_release
+   }
+   chrome_public_common_apk_or_module_tmpl(target_name) {
 -    # Always build 64-bit //android_webview:monochrome because Chrome runs
 -    # in 32-bit mode.
 -    if (android_64bit_target_cpu) {
@@ -95,7 +95,7 @@ index f36d654..8b83c98 100644
        secondary_abi_shared_libraries =
            [ "//chrome/android:monochrome_secondary_abi_lib" ]
 diff --git a/chrome/android/java/AndroidManifest_monochrome.xml b/chrome/android/java/AndroidManifest_monochrome.xml
-index 5ae85de..934d13d 100644
+index 5ae85dec51d1..934d13d806dc 100644
 --- a/chrome/android/java/AndroidManifest_monochrome.xml
 +++ b/chrome/android/java/AndroidManifest_monochrome.xml
 @@ -19,7 +19,6 @@
@@ -107,7 +107,7 @@ index 5ae85de..934d13d 100644
  
  {% block extra_keyset_definitions %}
 diff --git a/chrome/android/monochrome_android_manifest_jinja_variables.gni b/chrome/android/monochrome_android_manifest_jinja_variables.gni
-index dcbfa967..8e6d7cc 100644
+index dcbfa96764a1..8e6d7ccac9e2 100644
 --- a/chrome/android/monochrome_android_manifest_jinja_variables.gni
 +++ b/chrome/android/monochrome_android_manifest_jinja_variables.gni
 @@ -5,5 +5,4 @@
@@ -117,5 +117,5 @@ index dcbfa967..8e6d7cc 100644
 -  "use32bitAbi=android:use32bitAbi=\"true\"",
  ]
 -- 
-2.7.4
+2.19.1
 

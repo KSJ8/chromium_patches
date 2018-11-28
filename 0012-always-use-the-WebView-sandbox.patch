@@ -1,39 +1,40 @@
-From f6f9917fb1d60cb6fb473a9e05cce37740489a51 Mon Sep 17 00:00:00 2001
-From: Daniel Micay <danielmicay@gmail.com>
-Date: Tue, 22 Nov 2016 07:34:45 -0500
+From 8f39e87e2ac26909fadc7b2b38d999c8cd55c43b Mon Sep 17 00:00:00 2001
+From: Spotlight <spotlight@joscomputing.space>
+Date: Sat, 28 Jul 2018 18:10:29 -0500
 Subject: [PATCH 12/22] always use the WebView sandbox
 
 ---
- .../webview/chromium/WebViewChromiumFactoryProvider.java | 16 ++--------------
- 1 file changed, 2 insertions(+), 14 deletions(-)
+ .../WebViewChromiumFactoryProvider.java         | 17 ++---------------
+ 1 file changed, 2 insertions(+), 15 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index 6514317..f05346f 100644
+index 17dbf9deab42..ffb1eade9d66 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -192,20 +192,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -241,21 +241,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+                 CommandLineUtil.initCommandLine();
+             }
  
-         CommandLineUtil.initCommandLine();
+-            boolean multiProcess = false;
+-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+-                // Ask the system if multiprocess should be enabled on O+.
+-                multiProcess = mWebViewDelegate.isMultiProcessEnabled();
+-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+-                // Check the multiprocess developer setting directly on N.
+-                multiProcess = Settings.Global.getInt(
+-                                       ContextUtils.getApplicationContext().getContentResolver(),
+-                                       Settings.Global.WEBVIEW_MULTIPROCESS, 0)
+-                        == 1;
+-            }
+-            if (multiProcess) {
+-                CommandLine cl = CommandLine.getInstance();
+-                cl.appendSwitch("webview-sandboxed-renderer");
+-            }
++            CommandLine cl = CommandLine.getInstance();
++            cl.appendSwitch("webview-sandboxed-renderer");
  
--        boolean multiProcess = false;
--        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
--            // Ask the system if multiprocess should be enabled on O+.
--            multiProcess = mWebViewDelegate.isMultiProcessEnabled();
--        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
--            // Check the multiprocess developer setting directly on N.
--            multiProcess = Settings.Global.getInt(
--                    ContextUtils.getApplicationContext().getContentResolver(),
--                    Settings.Global.WEBVIEW_MULTIPROCESS, 0) == 1;
--        }
--        if (multiProcess) {
--            CommandLine cl = CommandLine.getInstance();
--            cl.appendSwitch("webview-sandboxed-renderer");
--        }
-+        CommandLine cl = CommandLine.getInstance();
-+        cl.appendSwitch("webview-sandboxed-renderer");
- 
-         ThreadUtils.setWillOverrideUiThread();
-         BuildInfo.setBrowserPackageInfo(packageInfo);
+             ThreadUtils.setWillOverrideUiThread();
+             BuildInfo.setBrowserPackageInfo(packageInfo);
 -- 
-2.7.4
+2.19.1
 

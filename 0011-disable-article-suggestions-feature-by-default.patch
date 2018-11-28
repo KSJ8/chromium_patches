@@ -1,4 +1,4 @@
-From bacf1363528e754b1de004db9c275f18c434dfc3 Mon Sep 17 00:00:00 2001
+From 3999bc775a49f3da036df62ef5cb893257815d80 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH 11/22] disable article suggestions feature by default
@@ -8,11 +8,11 @@ Subject: [PATCH 11/22] disable article suggestions feature by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index af71fdc..a121e5b 100644
+index a8ae47e80f37..5941da2039de 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
-@@ -41,7 +41,7 @@ const base::Feature kArticleSuggestionsExpandableHeader{
-     "NTPArticleSuggestionsExpandableHeader", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -39,7 +39,7 @@ const base::Feature kArticleSuggestionsExpandableHeader{
+     "NTPArticleSuggestionsExpandableHeader", base::FEATURE_ENABLED_BY_DEFAULT};
  
  const base::Feature kArticleSuggestionsFeature{
 -    "NTPArticleSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
@@ -21,5 +21,5 @@ index af71fdc..a121e5b 100644
  const base::Feature kBookmarkSuggestionsFeature{
      "NTPBookmarkSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
 -- 
-2.7.4
+2.19.1
 
