@@ -4,11 +4,12 @@ is_debug = false
 
 is_official_build = true
 is_component_build = false
-symbol_level = 0
+symbol_level = 1
+fieldtrial_testing_like_official_build = true
 
 ffmpeg_branding = "Chrome"
 proprietary_codecs = true
 
 android_channel = "stable"
-android_default_version_name = "67.0.3396.87"
-android_default_version_code = "339608752"
+android_default_version_name = "70.0.3538.110"
+android_default_version_code = "353811052"
