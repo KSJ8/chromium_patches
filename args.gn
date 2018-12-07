@@ -11,5 +11,5 @@ ffmpeg_branding = "Chrome"
 proprietary_codecs = true
 
 android_channel = "stable"
-android_default_version_name = "70.0.3538.110"
-android_default_version_code = "353811052"
+android_default_version_name = "71.0.3578.83"
+android_default_version_code = "357808352"
